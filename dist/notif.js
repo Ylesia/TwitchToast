@@ -1,6 +1,6 @@
 $(document).ready(function() {
     function topBar(message) {
-        $("<div />", { class: 'success', text: message }).hide().prependTo("#noti")
+        $("<div />", { class: 'geekinc', text: message }).hide().prependTo(".notification")
         .slideDown('fast').delay(10000).slideUp(function() { $(this).remove(); });
     }
     var i = 0;
