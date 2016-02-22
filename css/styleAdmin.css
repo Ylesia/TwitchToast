@@ -5,23 +5,33 @@
 
 header{
     background-color: #ea541b ;
+    color: white;
+    
+    position: relative;
 }
 
 aside{
     font-style: white;
     background-color: #ea541b ;
-    float: left;
+    
+    width: 15%;
+    
+    position: absolute;    
+    float : left;
 }
 
 section{
-    float: left;
+    
+    margin-left: 18%;
 }
 
 footer{
-    font-style: white;
+    color: white;
     background-color: #ea541b ;
+    
+    position: absolute;
 }
 
-#clear {
+.clear {
     clear: both;
 }
