@@ -1,12 +1,23 @@
 *{
     background-color: #97979b;
     font-family: "Gobold";
+    
+    margin: 10px;
+    padding: 5px;
+}
+
+ul
+{
+    list-style-type: none;
 }
 
 header{
     background-color: #ea541b ;
     color: white;
     
+    height: 40px;
+    
+    text-align: center;
     position: relative;
 }
 
