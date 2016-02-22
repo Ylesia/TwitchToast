@@ -1,0 +1,27 @@
+*{
+    background-color: #97979b;
+    font-family: "Gobold";
+}
+
+header{
+    background-color: #ea541b ;
+}
+
+aside{
+    font-style: white;
+    background-color: #ea541b ;
+    float: left;
+}
+
+section{
+    float: left;
+}
+
+footer{
+    font-style: white;
+    background-color: #ea541b ;
+}
+
+#clear {
+    clear: both;
+}
