@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <link href="css/styleAdmin.css" type="text/css" rel="stylesheet"></link>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <header>
+            TwitchToast Admin
+        </header>
+        
+        <aside>
+            Sélection d'une scène :
+            <!--Faire Boucler les différentes scènes pour l'utilisateur connecté-->
+            <ul>
+                <a><li>Scène 1</li></a>
+                <a><li>Scène 2</li></a>
+                <a><li>Scène 3</li></a>
+                <a><li>Scène 4</li></a>
+            </ul>
+        </aside>
+        
+        <section id='sceneLoader'>
+            <img onclick="changeImage()" src="bits.png"> </br>
+            <button onclick="addLayout()">+</button> </br>
+            <input type="text" id="title" />
+            <input type="text" id="duration" />
+            <input type="checkbox" id="true"
+            <button onclick="updateTitle()">update title</button> </br>
+            
+           
+        </section>
+        
+
+    </body>
+    <script type="text/javascript">
+        var socket = io.connect();
+        function updateTitle() {
+            var duration = parseInt(document.getElementById("duration").value, 10) || undefined;
+            socket.emit('setNewTitle', { text : document.getElementById("title").value, timeout: duration});
+        }
+        function addLayout() {
+            prompt("hello world")
+        }
+        function changeImage() {
+            
+        }
+        function 
+    </script>
+</html>

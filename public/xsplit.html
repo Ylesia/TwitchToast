@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <img id="logo">
+        <div id="title" class="hidden transition text-geekinc">
+        </div>
+    </body>
+    <script type="text/javascript">
+        var socket = io.connect();
+        socket.on('newTitle', function (title){
+            var titleContainer = document.getElementById('title')
+            titleContainer.textContent = title.text; 
+            titleContainer.classList.remove('hidden');
+            if(title.timeout){
+                setTimeout(function(){
+                    titleContainer.classList.add('hidden');
+                }, title.timeout*1000);
+            }
+        });
+        socket.on('newLogo', function (logo){
+            var logoContainer = document.getElementById('logo'); 
+            logoContainer.src = logo.src;
+            logoContainer.classList.remove('hidden');
+            if(logo.timeout){
+                setTimeout(function(){
+                    logoContainer.classList.add('hidden');
+                }, logo.timeout*1000);
+            }
+        });        
+    </script>
+</html>

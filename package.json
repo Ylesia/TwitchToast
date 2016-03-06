@@ -1,0 +1,16 @@
+{
+  "name": "geekincwidget",
+  "version": "1.0.0",
+  "description": "Widget pour les titres de GeekInc",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --debug app.js"
+  },
+  "author": "Christophe Camicas",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.5"
+  }
+}
