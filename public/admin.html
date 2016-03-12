@@ -26,8 +26,9 @@
             <button onclick="addLayout()">+</button> </br>
             <input type="text" id="title" />
             <input type="text" id="duration" />
-            <input type="checkbox" id="true" />
+            <input type="loop" id="true" />
             <button onclick="updateTitle()">update title</button> </br>
+            <button onclick="loopTitle()">Loop</button> </br>
             
            
         </section>
@@ -41,10 +42,13 @@
             socket.emit('setNewTitle', { text : document.getElementById("title").value, timeout: duration});
         }
         function addLayout() {
-            prompt("hello world")
+            prompt("hello world");
         }
-        function changeImage() {
-            
+        function loopTitle() {
+            var check = document.getElementById("loop").value
+            if (check == true) {
+                prompt("True");
+            }
         }
         
     </script>
