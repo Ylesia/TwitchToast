@@ -61,4 +61,5 @@
 
 .hiddenimage {
     transform : scaleX(0);
+    opacity: 0;
 }
