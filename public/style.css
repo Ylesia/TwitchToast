@@ -18,6 +18,7 @@
 }*/
 .logo{
     box-sizing: border-box;
+    opacity: 1;
     height: 100px;
     width: auto;
     bottom: 0,5em;
@@ -36,7 +37,7 @@
     font-size: 62px;
     height: 100px;
     display: inline-block;
-    padding: 0.2em 1em;
+    padding: 0.2em 0.3em;
     position: fixed;
     bottom: 0.5em;
     left: 1em;
@@ -50,7 +51,7 @@
     transform-origin: left;
 }
 .transitionlogo {
-    transition: transform 2s, color 2s ease-in-out;
+    transition: transform 2s, opacity 2s ease-in-out;
     transform-origin: left;
 }
 .hidden {
