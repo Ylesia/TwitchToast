@@ -19,6 +19,7 @@
 .logo{
     box-sizing: border-box;
     height: 54px;
+    width: 200px;
     bottom: 0,5em;
     display: inline-block;
     padding: 0.2em 1em;
