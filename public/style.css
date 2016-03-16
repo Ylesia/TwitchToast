@@ -16,6 +16,10 @@
     left: 100%;
     top: 0;
 }*/
+.logo{
+    height: 54px;
+    bottom: 0,5em;
+}
 .text-geekinc {
     box-sizing: border-box;
     background-color: #e95f24;
@@ -37,4 +41,8 @@
 .hidden {
     transform : scaleX(0);
     color: #e95f24;
+}
+
+.hiddenimage {
+    transform : scaleX(0);
 }
