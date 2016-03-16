@@ -1,0 +1,41 @@
+{
+    "Users":{
+        "_id": ObjectId(),
+        "username": "Ylesia",
+        "Access": {
+            "level":"0",
+            "group":"Geek Inc"
+        },
+        "Scenes": {
+            "_id": <1>,
+            "order": 1,
+            "name": "Scene Test 1",
+            "Toasts": [
+                {
+                "_id": <1>,
+                "order": 1,
+                "name": "Layout Test 1",
+                "content": "Texte Layout 1",
+               "loop": "on",
+                "duration": 10
+                },
+                {
+                "_id": <2>,
+                "order": 2,
+                "name": "Layout Test 2",
+                "content": "Texte Layout 1",
+               "loop": "off",
+                "duration": 5
+                },
+                {
+                "_id": <1>,
+                "order": 3,
+                "name": "Layout Test 3",
+                "content": "Texte Layout 3",
+                "loop": "on",
+                "duration": 10
+                }
+            ]
+        }
+    }
+}

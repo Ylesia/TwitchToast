@@ -21,7 +21,9 @@
     background-color: #e95f24;
     color: white;
     font-weight: bold;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Gobold', sans-serif;
+    height: 20px;
+    width: 60px;
     display: inline-block;
     padding: 0.2em 1em;
     position: fixed;
