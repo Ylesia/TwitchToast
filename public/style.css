@@ -51,7 +51,7 @@
     transform-origin: left;
 }
 .transitionlogo {
-    transition: transform 2s, opacity 2s ease-in-out;
+    transition: transform 2s, opacity 0s;
     transform-origin: left;
 }
 .hidden {
