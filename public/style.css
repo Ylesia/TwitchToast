@@ -30,7 +30,7 @@
 .text-geekinc {
     box-sizing: border-box;
     background-color: #e95f24;
-    color: white;
+    color: #e95f24;
     font-weight: bold;
     font-family: 'Gobold', sans-serif;
     font-size: 62px;
@@ -41,12 +41,15 @@
     bottom: 0.5em;
     left: 1em;
 }
+.texteblanc {
+    color: white;
+}
 .transition {
     transition: transform 1s, color 1s ease-in-out;
     transform-origin: left;
 }
 .transitionlogo {
-    transition: transform 2s, color 1s ease-in-out;
+    transition: transform 2s, color 2s ease-in-out;
     transform-origin: left;
 }
 .hidden {
