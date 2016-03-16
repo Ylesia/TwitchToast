@@ -18,12 +18,12 @@
             titleContainer.textContent = title.text;
             logoContainer.classList.add('hiddenimage'); 
             titleContainer.classList.remove('hidden');
-            titleContainer.classList.add('texteblanc');
+            //titleContainer.classList.add('texteblanc');
             if(title.timeout){
                 setTimeout(function(){
+                    //titleContainer.classList.remove('texteblanc');
                     titleContainer.classList.add('hidden');
                     logoContainer.classList.remove('hiddenimage');
-                    titleContainer.classList.remove('texteblanc');
                 }, title.timeout*1000);
             }
         });     
