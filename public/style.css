@@ -42,7 +42,7 @@
     left: 1em;
 }
 .texteblanc {
-    transition: transform 2s, color 2s;
+    transition: transform 2s;
     color: white;
 }
 .transition {
