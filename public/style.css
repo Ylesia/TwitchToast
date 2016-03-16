@@ -45,6 +45,10 @@
     transition: transform 1s, color 1s ease-in-out;
     transform-origin: left;
 }
+.transitionlogo {
+    transition: transform 2s, color 1s ease-in-out;
+    transform-origin: left;
+}
 .hidden {
     transform : scaleX(0);
     color: #e95f24;
