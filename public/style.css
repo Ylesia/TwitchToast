@@ -17,8 +17,14 @@
     top: 0;
 }*/
 .logo{
+    box-sizing: border-box;
     height: 54px;
     bottom: 0,5em;
+    display: inline-block;
+    padding: 0.2em 1em;
+    position: fixed;
+    bottom: 0.5em;
+    left: 1em;
 }
 .text-geekinc {
     box-sizing: border-box;
