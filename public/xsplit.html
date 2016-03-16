@@ -12,14 +12,15 @@
     <script type="text/javascript">
         var socket = io.connect();
         socket.on('newTitle', function (title){
-            var titleContainer = document.getElementById('title')
+            var titleContainer = document.getElementById('title');
+            var logoContainer = document.getElementById('logo');
             titleContainer.textContent = title.text;
-            titleContainer.classList.add('hiddenimage'); 
+            logoContainer.classList.add('hiddenimage'); 
             titleContainer.classList.remove('hidden');
             if(title.timeout){
                 setTimeout(function(){
                     titleContainer.classList.add('hidden');
-                    titleContainer.classList.remove('hiddenimage');
+                    logoContainer.classList.remove('hiddenimage');
                 }, title.timeout*1000);
             }
         });     
