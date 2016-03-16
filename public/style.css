@@ -42,6 +42,7 @@
     left: 1em;
 }
 .texteblanc {
+    transition: transform 1s, color 1s ease-in-out;
     color: white;
 }
 .transition {
