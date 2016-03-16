@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <link href="style.css" type="text/css" rel="stylesheet">
+        <link href="css/styleToasts.css" type="text/css" rel="stylesheet">
         <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     </head>
     <body>
@@ -14,6 +14,7 @@
         socket.on('newTitle', function (title){
             var titleContainer = document.getElementById('title');
             var logoContainer = document.getElementById('logo');
+            var logotimer = title.timeout +2;
             
             titleContainer.textContent = title.text;
             logoContainer.classList.add('hiddenimage'); 
@@ -23,8 +24,10 @@
                 setTimeout(function(){
                     //titleContainer.classList.remove('texteblanc');
                     titleContainer.classList.add('hidden');
-                    logoContainer.classList.remove('hiddenimage');
                 }, title.timeout*1000);
+                setTimeoutLogo(function(){
+                    logoContainer.classList.remove('hiddenimage');
+                }, logotimer*1000);
             }
         });     
     </script>
