@@ -52,7 +52,6 @@
 }
 .transitionlogo {
     transition: transform 2s, opacity 0s;
-    transform-origin: left;
 }
 .hidden {
     transform : scaleX(0);
