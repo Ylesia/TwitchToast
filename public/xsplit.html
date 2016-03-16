@@ -14,7 +14,7 @@
         socket.on('newTitle', function (title){
             var titleContainer = document.getElementById('title');
             var logoContainer = document.getElementById('logo');
-            var logotimer = title.timeout +2;
+            var logotimer = 2;
             
             titleContainer.textContent = title.text;
             logoContainer.classList.add('hiddenimage'); 
@@ -25,7 +25,7 @@
                     //titleContainer.classList.remove('texteblanc');
                     titleContainer.classList.add('hidden');
                 }, title.timeout*1000);
-                setTimeoutLogo(function(){
+                setTimeout(function(){
                     logoContainer.classList.remove('hiddenimage');
                 }, logotimer*1000);
             }
