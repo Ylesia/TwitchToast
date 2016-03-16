@@ -14,7 +14,7 @@
         socket.on('newTitle', function (title){
             var titleContainer = document.getElementById('title');
             var logoContainer = document.getElementById('logo');
-            var logotimer = 2;
+            var logotimer = title.timeout + 2;
             
             titleContainer.textContent = title.text;
             logoContainer.classList.add('hiddenimage'); 
