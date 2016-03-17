@@ -22,7 +22,7 @@ html{
 .logo{
     box-sizing: border-box;
     opacity: 1;
-    height: 150px;
+    height: 120px;
     width: auto;
     bottom: 0,5em;
     display: inline-block;
