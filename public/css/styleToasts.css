@@ -17,12 +17,12 @@
     top: 0;
 }*/
 html{
-    background-color: black;
+    background-color: transparent;
 }
 .logo{
     box-sizing: border-box;
     opacity: 1;
-    height: 100px;
+    height: 150px;
     width: auto;
     bottom: 0,5em;
     display: inline-block;
