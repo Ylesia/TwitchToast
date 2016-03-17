@@ -16,10 +16,13 @@
     left: 100%;
     top: 0;
 }*/
+html{
+    background-color: black;
+}
 .logo{
     box-sizing: border-box;
     opacity: 1;
-    height: auto;
+    height: 100px;
     width: auto;
     bottom: 0,5em;
     display: inline-block;
