@@ -36,6 +36,7 @@ html{
     background-color: #e95f24;
     color: white;
     font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
     font-size: 62px;
     height: 100px;
     display: inline-block;
