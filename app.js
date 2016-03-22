@@ -20,7 +20,7 @@ app.use(express.static('./public')) // Indique que le dossier /public contient d
 
 io.on('connection', function (socket) {
   // Test pour TitleReady
-  socket.emit('newTitle', { text: 'Keynote Apple Spring 2016', timeout: 5 });
+  socket.emit('newTitle', { text: 'Good Morning Zombies', timeout: 5 });
   socket.on('setNewTitle', function (data) {
     console.log(data);
     io.sockets.emit('newTitle', data);
