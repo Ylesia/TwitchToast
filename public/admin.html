@@ -36,6 +36,13 @@
 
     </body>
     <script type="text/javascript">
+    
+    //DB
+    var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+var ObjectId = require('mongodb').ObjectID;
+var url = 'mongodb://localhost:27017/test';
+    //DB
         var socket = io.connect();
         function updateTitle() {
             var duration = parseInt(document.getElementById("duration").value, 10) || undefined;
