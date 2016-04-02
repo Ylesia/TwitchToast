@@ -4,6 +4,10 @@
         <meta charset="utf-8">
         <link href="css/styleAdmin.css" type="text/css" rel="stylesheet"></link>
         <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            var toastNumbers = 5;
+            var listToastsLoop;
+        </script>
     </head>
     <body>
         <header>
@@ -21,15 +25,14 @@
             </ul>
         </aside>
         
-        <section id='sceneLoader'>
+        <section class='sceneLoader'>
             <img onclick="changeImage()" src="img/geekinc.png"> </br>
             <button onclick="addLayout()">+</button> </br>
             <input type="text" id="title" />
             <input type="text" id="duration" />
             <input type="checkbox" id="loop" />
             <button onclick="updateTitle()">update title</button> </br>
-            <button onclick="loopTitle()">Loop</button> </br>
-            
+            <button onclick="loopTitle()">Loop</button> </br> 
            
         </section>
         
@@ -49,11 +52,18 @@
             prompt("Image");
         }
         function loopTitle() {
-            var check = document.getElementById("loop").value;
-            //prompt(check);
-            if (check == "on") {
-                prompt("True");
+            var x = toastNumbers;
+            for (i=1;i<x;i++){
+               var check = document.getElementById("loop"+x+"").value;
+                //prompt(check);
+                if (check == "on") {
+                    var toastTitle = document.getElementById("title"+x+"").value;
+                    var toastduration = document.getElementById("duration"+x+"").value;
+                    //Ordre, Titre, Durée
+                    toastNumbers[x] = [x,toastTitle,toastduration];
+                } 
             }
+                
         }  
     </script>
 </html>

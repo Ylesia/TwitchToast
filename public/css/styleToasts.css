@@ -21,10 +21,22 @@
 html{
     background-color: transparent;
 }
-.logo{
+.logogeekinc{
     box-sizing: border-box;
     opacity: 0.6;
     height: 100px;
+    width: auto;
+    bottom: 0.5em;
+    display: inline-block;
+    padding: 0.2em 1em;
+    position: fixed;
+    bottom: 0.5em;
+    left: 1em;
+}
+.logobits{
+    box-sizing: border-box;
+    opacity: 0.6;
+    height: 120px;
     width: auto;
     bottom: 0.5em;
     display: inline-block;

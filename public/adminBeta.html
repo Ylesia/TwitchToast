@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <link href="css/styleAdmin.css" type="text/css" rel="stylesheet"></link>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            var toastNumbers = 5;
+            var toastsInLoop;
+            var listToastsLoop = [];
+            
+            var source;
+
+            function isbefore(a, b) {
+                if (a.parentNode == b.parentNode) {
+                for (var cur = a; cur; cur = cur.previousSibling) {
+                    if (cur === b) { 
+                    return true;
+                    }
+                }
+                }
+                return false;
+            } 
+
+            function dragenter(e) {
+                if (isbefore(source, e.target)) {
+                e.target.parentNode.insertBefore(source, e.target);
+                }
+                else {
+                e.target.parentNode.insertBefore(source, e.target.nextSibling);
+                }
+            }
+
+            function dragstart(e) {
+                source = e.target;
+                e.dataTransfer.effectAllowed = 'move';
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            TwitchToast Admin
+        </header>
+        
+        <aside>
+            Sélection d'une scène :
+            <!--Faire Boucler les différentes scènes pour l'utilisateur connecté-->
+            <ul>
+                <a><li>Scène 1</li></a>
+                <a><li>Scène 2</li></a>
+                <a><li>Scène 3</li></a>
+                <a><li>Scène 4</li></a>
+            </ul>
+        </aside>
+        
+        <section class='toastList'>
+            <button onclick="addLayout()">+</button> </br>
+            
+            <!--<script type="text/javascript">
+                for(i=1;i<=toastNumbers; i++){
+                    document.write(
+                        <span class='toastParam'>
+                            <input type="text" id="title"+i+"" />
+                            <input type="text" id="duration1"+i+"" />
+                            <input type="checkbox" id="loop1"+i+"" />
+                            <button onclick="updateTitle("+i+")">update title</button> </br>
+                        </span>
+                    )
+                }-->
+            <!--</script>-->
+            
+            <ul>
+                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
+                    <input type="text" id="title1" />
+                    <input type="text" id="duration1" />
+                    <input type="checkbox" id="loop1" />
+                    <button onclick="updateTitle(1)">update title</button> </br>
+                </li>
+                
+                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
+                    <input type="text" id="title2" />
+                    <input type="text" id="duration2" />
+                    <input type="checkbox" id="loop2" />
+                    <button onclick="updateTitle(2)">update title</button> </br>
+                </li>
+                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
+                    <input type="text" id="title3" />
+                    <input type="text" id="duration3" />
+                    <input type="checkbox" id="loop3" />
+                    <button onclick="updateTitle(3)">update title</button> </br>
+                </li>
+                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
+                    <input type="text" id="title4" />
+                    <input type="text" id="duration4" />
+                    <input type="checkbox" id="loop4" />
+                    <button onclick="updateTitle(4)">update title</button> </br>
+                </li>
+                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
+                    <input type="text" id="title5" />
+                    <input type="text" id="duration5" />
+                    <input type="checkbox" id="loop5" />
+                    <button onclick="updateTitle(5)">update title</button> </br>
+                </li>
+            </ul>
+
+            <button onclick="updateLoopTitles()">Loop</button> </br> 
+        </section>
+
+    </body>
+    <script type="text/javascript">
+
+        var socket = io.connect();
+        function updateTitle(id) {
+            var duration = parseInt(document.getElementById("duration"+id+"").value, 10) || undefined;
+            socket.emit('setNewTitle', { text : document.getElementById("title"+id+"").value, timeout: duration});
+        }
+        function addLayout() {
+            prompt("hello world");
+        }
+        function changeImage() {
+            prompt("Image");
+        }
+        function LoopTitles(){
+            //TODO Listener Stop Boucle
+            ///
+                //Si le nombre de toast en boucle n'est pas nul
+                if (toastsInLoop > 0){
+                //Création du Scénarion de boucle, 
+                    //mise en variable du nombre de toast à afficher
+                    x = toastsInLoop;
+                    for (i=1;i<x;i++){          
+                       function updateLoopTitle() {
+                            var duration = listToastsLoop[i,2];
+                            socket.emit('setNewTitle', { text : listToastsLoop[i,1], timeout: duration});
+                        }
+                    }
+                }
+        }
+        function updateLoopTitles() {
+            //TODO Stop Boucle
+            ///
+            //remise à 0 du nombre de Toasts en boucle
+            toastsInLoop = 0;
+            //remise à 0 du tableau qui contient les toasts
+            listToastsLoop = [];
+            //Nombre total de toast sur la page
+            var x = toastNumbers;
+            //Boucle qui check chaque toast et regarde si la coche "loop" est "ON"
+            for (i=1;i<=x;i++){
+               //remise à 0 du check
+               var check = null
+               //mise en variable de la valeur de loop
+               var check = document.getElementById("loop"+i+"").value;
+               //SI ON
+               if (check == "on") {
+                    //Déclare le nombre de toast dans la boucle
+                    toastsInLoop += 1
+                    //Enregistre le titre et la durée
+                    var toastTitle = document.getElementById("title"+i+"").value;
+                    var toastduration = document.getElementById("duration"+i+"").value;
+                    //Ordre, Titre et Durée intégrée dans l'array de boucle
+                    listToastsLoop[i] = [i,toastTitle,toastduration];
+                } 
+            }
+            //MàJ terminée, lancement de la loop
+            LoopTitles()
+        }  
+    </script>
+</html>
