@@ -4,38 +4,8 @@
         <meta charset="utf-8">
         <link href="css/styleAdmin.css" type="text/css" rel="stylesheet"></link>
         <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-        <script type="text/javascript">
-            var toastNumbers = 5;
-            var toastsInLoop;
-            var listToastsLoop = [];
-            
-            var source;
-
-            function isbefore(a, b) {
-                if (a.parentNode == b.parentNode) {
-                for (var cur = a; cur; cur = cur.previousSibling) {
-                    if (cur === b) { 
-                    return true;
-                    }
-                }
-                }
-                return false;
-            } 
-
-            function dragenter(e) {
-                if (isbefore(source, e.target)) {
-                e.target.parentNode.insertBefore(source, e.target);
-                }
-                else {
-                e.target.parentNode.insertBefore(source, e.target.nextSibling);
-                }
-            }
-
-            function dragstart(e) {
-                source = e.target;
-                e.dataTransfer.effectAllowed = 'move';
-            }
-        </script>
+        <script type="text/javascript" src="js/dragAndDrop.js"></script>
+        <script type="text/javascript" src="js/toastengine.js"></script>
     </head>
     <body>
         <header>
@@ -102,68 +72,21 @@
                     <button onclick="updateTitle(5)">update title</button> </br>
                 </li>
             </ul>
-
-            <button onclick="updateLoopTitles()">Loop</button> </br> 
+            
+            <label for="durationloop">
+                <span>Durée de la boucle :</span>
+                <select id="durationloop" name="duartionloopselector">
+                <option value="300">5min</option>
+                <option value="600">10min</option>
+                <option value="900">15min</option>
+                <option value="1200">20min</option>
+                <option value="1500">25min</option>
+                <option value="1800">30min</option>
+                <option value="3600">1h</option>
+                </select>
+            </label>
+            <button onclick="updateLoopList()">Loop</button> </br> 
         </section>
 
     </body>
-    <script type="text/javascript">
-
-        var socket = io.connect();
-        function updateTitle(id) {
-            var duration = parseInt(document.getElementById("duration"+id+"").value, 10) || undefined;
-            socket.emit('setNewTitle', { text : document.getElementById("title"+id+"").value, timeout: duration});
-        }
-        function addLayout() {
-            prompt("hello world");
-        }
-        function changeImage() {
-            prompt("Image");
-        }
-        function LoopTitles(){
-            //TODO Listener Stop Boucle
-            ///
-                //Si le nombre de toast en boucle n'est pas nul
-                if (toastsInLoop > 0){
-                //Création du Scénarion de boucle, 
-                    //mise en variable du nombre de toast à afficher
-                    x = toastsInLoop;
-                    for (i=1;i<x;i++){          
-                       function updateLoopTitle() {
-                            var duration = listToastsLoop[i,2];
-                            socket.emit('setNewTitle', { text : listToastsLoop[i,1], timeout: duration});
-                        }
-                    }
-                }
-        }
-        function updateLoopTitles() {
-            //TODO Stop Boucle
-            ///
-            //remise à 0 du nombre de Toasts en boucle
-            toastsInLoop = 0;
-            //remise à 0 du tableau qui contient les toasts
-            listToastsLoop = [];
-            //Nombre total de toast sur la page
-            var x = toastNumbers;
-            //Boucle qui check chaque toast et regarde si la coche "loop" est "ON"
-            for (i=1;i<=x;i++){
-               //remise à 0 du check
-               var check = null
-               //mise en variable de la valeur de loop
-               var check = document.getElementById("loop"+i+"").value;
-               //SI ON
-               if (check == "on") {
-                    //Déclare le nombre de toast dans la boucle
-                    toastsInLoop += 1
-                    //Enregistre le titre et la durée
-                    var toastTitle = document.getElementById("title"+i+"").value;
-                    var toastduration = document.getElementById("duration"+i+"").value;
-                    //Ordre, Titre et Durée intégrée dans l'array de boucle
-                    listToastsLoop[i] = [i,toastTitle,toastduration];
-                } 
-            }
-            //MàJ terminée, lancement de la loop
-            LoopTitles()
-        }  
-    </script>
 </html>

@@ -5,6 +5,9 @@
     margin: 8px;
     padding: 5px;
 }
+select, textarea:focus{
+    background-color: white;
+}
 
 ul
 {
