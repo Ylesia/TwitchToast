@@ -21,12 +21,12 @@ function loopToasts(LastToast,loopEnd){
         var paramTitle = tabListToastsLoop[i][1];
         var paramDuration = tabListToastsLoop[i][2];
         
-        function toastTimer(input){
-            var = nextToast + 4
+        function toastTimer(Input){
+            var nextToast = Input + 4
             return nextToast + 4;
         }
         
-        window.setTimeout(updateTitleLoop(paramTitle,paramDuration), toastTimer(paramDuration));
+        window.setTimeout(updateTitleLoop(paramTitle,paramDuration), new toastTimer(paramDuration));
         //retour au premier toast si on arrive à la fin du tableau
     }
     while (Date.now().getTime() < loopEnd){
