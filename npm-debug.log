@@ -1,0 +1,940 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'qr-js',
+1 verbose cli   '--save' ]
+2 info using npm@3.6.0
+3 info using node@v5.6.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData qr-js
+8 silly fetchNamedPackageData qr-js
+9 silly mapToRegistry name qr-js
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/qr-js
+13 verbose request uri https://registry.npmjs.org/qr-js
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 15:06:31
+16 verbose request id 489c12acb46fd196
+17 verbose etag "EWS2IK7C7BQWUPOBC6SGA1Z2Z"
+18 http request GET https://registry.npmjs.org/qr-js
+19 http 304 https://registry.npmjs.org/qr-js
+20 verbose headers { date: 'Tue, 05 Apr 2016 13:06:31 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   etag: '"EWS2IK7C7BQWUPOBC6SGA1Z2Z"',
+20 verbose headers   age: '35',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-lcy1123-LCY',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '1',
+20 verbose headers   'x-timer': 'S1459861591.798435,VS0,VE0',
+20 verbose headers   vary: 'Accept' }
+21 silly get cb [ 304,
+21 silly get   { date: 'Tue, 05 Apr 2016 13:06:31 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     etag: '"EWS2IK7C7BQWUPOBC6SGA1Z2Z"',
+21 silly get     age: '35',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-lcy1123-LCY',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '1',
+21 silly get     'x-timer': 'S1459861591.798435,VS0,VE0',
+21 silly get     vary: 'Accept' } ]
+22 verbose etag https://registry.npmjs.org/qr-js from cache
+23 verbose get saving qr-js to /Users/jean-francoisquaderi/.npm/registry.npmjs.org/qr-js/.cache.json
+24 verbose correctMkdir /Users/jean-francoisquaderi/.npm correctMkdir not in flight; initializing
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly resolveWithNewModule qr-js@1.1.4 checking installable status
+38 silly cache add args [ 'qr-js', null ]
+39 verbose cache add spec qr-js
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'qr-js',
+40 silly cache add   scope: null,
+40 silly cache add   name: 'qr-js',
+40 silly cache add   rawSpec: '',
+40 silly cache add   spec: 'latest',
+40 silly cache add   type: 'tag' }
+41 silly addNamed qr-js@latest
+42 verbose addNamed "latest" is being treated as a dist-tag for qr-js
+43 info addNameTag [ 'qr-js', 'latest' ]
+44 silly mapToRegistry name qr-js
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry uri https://registry.npmjs.org/qr-js
+48 verbose addNameTag registry:https://registry.npmjs.org/qr-js not in flight; fetching
+49 verbose get https://registry.npmjs.org/qr-js not expired, no request
+50 silly addNameTag next cb for qr-js with tag latest
+51 silly addNamed qr-js@1.1.4
+52 verbose addNamed "1.1.4" is a plain semver version for qr-js
+53 silly cache afterAdd qr-js@1.1.4
+54 verbose afterAdd /Users/jean-francoisquaderi/.npm/qr-js/1.1.4/package/package.json not in flight; writing
+55 verbose correctMkdir /Users/jean-francoisquaderi/.npm correctMkdir not in flight; initializing
+56 verbose afterAdd /Users/jean-francoisquaderi/.npm/qr-js/1.1.4/package/package.json written
+57 silly fetchNamedPackageData canvas
+58 silly mapToRegistry name canvas
+59 silly mapToRegistry using default registry
+60 silly mapToRegistry registry https://registry.npmjs.org/
+61 silly mapToRegistry uri https://registry.npmjs.org/canvas
+62 verbose request uri https://registry.npmjs.org/canvas
+63 verbose request no auth needed
+64 info attempt registry request try #1 at 15:06:31
+65 verbose etag "BLNRMR0FBR8NN0NPYCTA9KINO"
+66 http request GET https://registry.npmjs.org/canvas
+67 http 304 https://registry.npmjs.org/canvas
+68 verbose headers { date: 'Tue, 05 Apr 2016 13:06:32 GMT',
+68 verbose headers   via: '1.1 varnish',
+68 verbose headers   'cache-control': 'max-age=300',
+68 verbose headers   etag: '"BLNRMR0FBR8NN0NPYCTA9KINO"',
+68 verbose headers   age: '82',
+68 verbose headers   connection: 'keep-alive',
+68 verbose headers   'x-served-by': 'cache-lcy1135-LCY',
+68 verbose headers   'x-cache': 'HIT',
+68 verbose headers   'x-cache-hits': '1',
+68 verbose headers   'x-timer': 'S1459861592.064149,VS0,VE0',
+68 verbose headers   vary: 'Accept' }
+69 silly get cb [ 304,
+69 silly get   { date: 'Tue, 05 Apr 2016 13:06:32 GMT',
+69 silly get     via: '1.1 varnish',
+69 silly get     'cache-control': 'max-age=300',
+69 silly get     etag: '"BLNRMR0FBR8NN0NPYCTA9KINO"',
+69 silly get     age: '82',
+69 silly get     connection: 'keep-alive',
+69 silly get     'x-served-by': 'cache-lcy1135-LCY',
+69 silly get     'x-cache': 'HIT',
+69 silly get     'x-cache-hits': '1',
+69 silly get     'x-timer': 'S1459861592.064149,VS0,VE0',
+69 silly get     vary: 'Accept' } ]
+70 verbose etag https://registry.npmjs.org/canvas from cache
+71 verbose get saving canvas to /Users/jean-francoisquaderi/.npm/registry.npmjs.org/canvas/.cache.json
+72 verbose correctMkdir /Users/jean-francoisquaderi/.npm correctMkdir not in flight; initializing
+73 silly resolveWithNewModule canvas@1.3.12 checking installable status
+74 silly cache add args [ 'canvas@^1.3.1', null ]
+75 verbose cache add spec canvas@^1.3.1
+76 silly cache add parsed spec Result {
+76 silly cache add   raw: 'canvas@^1.3.1',
+76 silly cache add   scope: null,
+76 silly cache add   name: 'canvas',
+76 silly cache add   rawSpec: '^1.3.1',
+76 silly cache add   spec: '>=1.3.1 <2.0.0',
+76 silly cache add   type: 'range' }
+77 silly addNamed canvas@>=1.3.1 <2.0.0
+78 verbose addNamed ">=1.3.1 <2.0.0" is a valid semver range for canvas
+79 silly addNameRange { name: 'canvas', range: '>=1.3.1 <2.0.0', hasData: false }
+80 silly mapToRegistry name canvas
+81 silly mapToRegistry using default registry
+82 silly mapToRegistry registry https://registry.npmjs.org/
+83 silly mapToRegistry uri https://registry.npmjs.org/canvas
+84 verbose addNameRange registry:https://registry.npmjs.org/canvas not in flight; fetching
+85 verbose get https://registry.npmjs.org/canvas not expired, no request
+86 silly addNameRange number 2 { name: 'canvas', range: '>=1.3.1 <2.0.0', hasData: true }
+87 silly addNameRange versions [ 'canvas',
+87 silly addNameRange   [ '0.0.1',
+87 silly addNameRange     '0.0.2',
+87 silly addNameRange     '0.0.3',
+87 silly addNameRange     '0.0.4',
+87 silly addNameRange     '0.0.5',
+87 silly addNameRange     '0.0.6',
+87 silly addNameRange     '0.0.7',
+87 silly addNameRange     '0.0.8',
+87 silly addNameRange     '0.1.0',
+87 silly addNameRange     '0.2.0',
+87 silly addNameRange     '0.2.1',
+87 silly addNameRange     '0.3.0',
+87 silly addNameRange     '0.3.1',
+87 silly addNameRange     '0.3.2',
+87 silly addNameRange     '0.3.3',
+87 silly addNameRange     '0.4.0',
+87 silly addNameRange     '0.4.1',
+87 silly addNameRange     '0.4.2',
+87 silly addNameRange     '0.4.3',
+87 silly addNameRange     '0.5.0',
+87 silly addNameRange     '0.5.1',
+87 silly addNameRange     '0.5.2',
+87 silly addNameRange     '0.5.3',
+87 silly addNameRange     '0.5.4',
+87 silly addNameRange     '0.6.0',
+87 silly addNameRange     '0.7.0',
+87 silly addNameRange     '0.7.1',
+87 silly addNameRange     '0.7.2',
+87 silly addNameRange     '0.7.3',
+87 silly addNameRange     '0.8.0',
+87 silly addNameRange     '0.8.1',
+87 silly addNameRange     '0.8.2',
+87 silly addNameRange     '0.8.3',
+87 silly addNameRange     '0.9.0',
+87 silly addNameRange     '0.10.0',
+87 silly addNameRange     '0.10.1',
+87 silly addNameRange     '0.10.2',
+87 silly addNameRange     '0.10.3',
+87 silly addNameRange     '0.11.0',
+87 silly addNameRange     '0.11.1',
+87 silly addNameRange     '0.11.2',
+87 silly addNameRange     '0.11.3',
+87 silly addNameRange     '0.12.0',
+87 silly addNameRange     '0.12.1',
+87 silly addNameRange     '0.13.0',
+87 silly addNameRange     '0.13.1',
+87 silly addNameRange     '1.0.0',
+87 silly addNameRange     '1.0.1',
+87 silly addNameRange     '1.0.2',
+87 silly addNameRange     '1.0.3',
+87 silly addNameRange     '1.0.4',
+87 silly addNameRange     '1.1.0',
+87 silly addNameRange     '1.1.1',
+87 silly addNameRange     '1.1.2',
+87 silly addNameRange     '1.1.3',
+87 silly addNameRange     '1.1.4',
+87 silly addNameRange     '1.1.5',
+87 silly addNameRange     '1.1.6',
+87 silly addNameRange     '1.2.0',
+87 silly addNameRange     '1.2.1',
+87 silly addNameRange     '1.2.2',
+87 silly addNameRange     '1.2.3',
+87 silly addNameRange     '1.2.4',
+87 silly addNameRange     '1.2.5',
+87 silly addNameRange     '1.2.6',
+87 silly addNameRange     '1.2.7',
+87 silly addNameRange     '1.2.8',
+87 silly addNameRange     '1.2.9',
+87 silly addNameRange     '1.2.10',
+87 silly addNameRange     '1.2.11',
+87 silly addNameRange     '1.3.0',
+87 silly addNameRange     '1.3.1',
+87 silly addNameRange     '1.3.2',
+87 silly addNameRange     '1.3.3',
+87 silly addNameRange     '1.3.4',
+87 silly addNameRange     '1.3.5',
+87 silly addNameRange     '1.3.6',
+87 silly addNameRange     '1.3.7',
+87 silly addNameRange     '1.3.8',
+87 silly addNameRange     '1.3.9',
+87 silly addNameRange     '1.3.10',
+87 silly addNameRange     '1.3.11',
+87 silly addNameRange     '1.3.12' ] ]
+88 silly addNamed canvas@1.3.12
+89 verbose addNamed "1.3.12" is a plain semver version for canvas
+90 silly cache afterAdd canvas@1.3.12
+91 verbose afterAdd /Users/jean-francoisquaderi/.npm/canvas/1.3.12/package/package.json not in flight; writing
+92 verbose correctMkdir /Users/jean-francoisquaderi/.npm correctMkdir not in flight; initializing
+93 verbose afterAdd /Users/jean-francoisquaderi/.npm/canvas/1.3.12/package/package.json written
+94 silly fetchNamedPackageData nan
+95 silly mapToRegistry name nan
+96 silly mapToRegistry using default registry
+97 silly mapToRegistry registry https://registry.npmjs.org/
+98 silly mapToRegistry uri https://registry.npmjs.org/nan
+99 verbose request uri https://registry.npmjs.org/nan
+100 verbose request no auth needed
+101 info attempt registry request try #1 at 15:06:32
+102 verbose etag "2UZKQOUIL0TMX4WY7FZ5Q5HJQ"
+103 http request GET https://registry.npmjs.org/nan
+104 http 304 https://registry.npmjs.org/nan
+105 verbose headers { date: 'Tue, 05 Apr 2016 13:06:32 GMT',
+105 verbose headers   via: '1.1 varnish',
+105 verbose headers   'cache-control': 'max-age=300',
+105 verbose headers   etag: '"2UZKQOUIL0TMX4WY7FZ5Q5HJQ"',
+105 verbose headers   age: '121',
+105 verbose headers   connection: 'keep-alive',
+105 verbose headers   'x-served-by': 'cache-lcy1125-LCY',
+105 verbose headers   'x-cache': 'HIT',
+105 verbose headers   'x-cache-hits': '6',
+105 verbose headers   'x-timer': 'S1459861592.198162,VS0,VE0',
+105 verbose headers   vary: 'Accept' }
+106 silly get cb [ 304,
+106 silly get   { date: 'Tue, 05 Apr 2016 13:06:32 GMT',
+106 silly get     via: '1.1 varnish',
+106 silly get     'cache-control': 'max-age=300',
+106 silly get     etag: '"2UZKQOUIL0TMX4WY7FZ5Q5HJQ"',
+106 silly get     age: '121',
+106 silly get     connection: 'keep-alive',
+106 silly get     'x-served-by': 'cache-lcy1125-LCY',
+106 silly get     'x-cache': 'HIT',
+106 silly get     'x-cache-hits': '6',
+106 silly get     'x-timer': 'S1459861592.198162,VS0,VE0',
+106 silly get     vary: 'Accept' } ]
+107 verbose etag https://registry.npmjs.org/nan from cache
+108 verbose get saving nan to /Users/jean-francoisquaderi/.npm/registry.npmjs.org/nan/.cache.json
+109 verbose correctMkdir /Users/jean-francoisquaderi/.npm correctMkdir not in flight; initializing
+110 silly resolveWithNewModule nan@2.2.1 checking installable status
+111 silly cache add args [ 'nan@^2.1.0', null ]
+112 verbose cache add spec nan@^2.1.0
+113 silly cache add parsed spec Result {
+113 silly cache add   raw: 'nan@^2.1.0',
+113 silly cache add   scope: null,
+113 silly cache add   name: 'nan',
+113 silly cache add   rawSpec: '^2.1.0',
+113 silly cache add   spec: '>=2.1.0 <3.0.0',
+113 silly cache add   type: 'range' }
+114 silly addNamed nan@>=2.1.0 <3.0.0
+115 verbose addNamed ">=2.1.0 <3.0.0" is a valid semver range for nan
+116 silly addNameRange { name: 'nan', range: '>=2.1.0 <3.0.0', hasData: false }
+117 silly mapToRegistry name nan
+118 silly mapToRegistry using default registry
+119 silly mapToRegistry registry https://registry.npmjs.org/
+120 silly mapToRegistry uri https://registry.npmjs.org/nan
+121 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+122 verbose get https://registry.npmjs.org/nan not expired, no request
+123 silly addNameRange number 2 { name: 'nan', range: '>=2.1.0 <3.0.0', hasData: true }
+124 silly addNameRange versions [ 'nan',
+124 silly addNameRange   [ '0.3.0-wip',
+124 silly addNameRange     '0.3.0-wip2',
+124 silly addNameRange     '0.3.0',
+124 silly addNameRange     '0.3.1',
+124 silly addNameRange     '0.3.2',
+124 silly addNameRange     '0.4.0',
+124 silly addNameRange     '0.4.1',
+124 silly addNameRange     '0.4.2',
+124 silly addNameRange     '0.4.3',
+124 silly addNameRange     '0.4.4',
+124 silly addNameRange     '0.5.0',
+124 silly addNameRange     '0.5.1',
+124 silly addNameRange     '0.5.2',
+124 silly addNameRange     '0.6.0',
+124 silly addNameRange     '0.7.0',
+124 silly addNameRange     '0.7.1',
+124 silly addNameRange     '0.8.0',
+124 silly addNameRange     '1.0.0',
+124 silly addNameRange     '1.1.0',
+124 silly addNameRange     '1.1.1',
+124 silly addNameRange     '1.1.2',
+124 silly addNameRange     '1.2.0',
+124 silly addNameRange     '1.3.0',
+124 silly addNameRange     '1.4.0',
+124 silly addNameRange     '1.4.1',
+124 silly addNameRange     '1.5.0',
+124 silly addNameRange     '1.4.2',
+124 silly addNameRange     '1.4.3',
+124 silly addNameRange     '1.5.1',
+124 silly addNameRange     '1.5.2',
+124 silly addNameRange     '1.6.0',
+124 silly addNameRange     '1.5.3',
+124 silly addNameRange     '1.6.1',
+124 silly addNameRange     '1.6.2',
+124 silly addNameRange     '1.7.0',
+124 silly addNameRange     '1.8.0',
+124 silly addNameRange     '1.8.1',
+124 silly addNameRange     '1.8.2',
+124 silly addNameRange     '1.8.3',
+124 silly addNameRange     '1.8.4',
+124 silly addNameRange     '1.9.0',
+124 silly addNameRange     '2.0.0',
+124 silly addNameRange     '2.0.1',
+124 silly addNameRange     '2.0.2',
+124 silly addNameRange     '2.0.3',
+124 silly addNameRange     '2.0.4',
+124 silly addNameRange     '2.0.5',
+124 silly addNameRange     '2.0.6',
+124 silly addNameRange     '2.0.7',
+124 silly addNameRange     '2.0.8',
+124 silly addNameRange     '2.0.9',
+124 silly addNameRange     '2.1.0',
+124 silly addNameRange     '2.2.0',
+124 silly addNameRange     '2.2.1' ] ]
+125 silly addNamed nan@2.2.1
+126 verbose addNamed "2.2.1" is a plain semver version for nan
+127 silly cache afterAdd nan@2.2.1
+128 verbose afterAdd /Users/jean-francoisquaderi/.npm/nan/2.2.1/package/package.json not in flight; writing
+129 verbose correctMkdir /Users/jean-francoisquaderi/.npm correctMkdir not in flight; initializing
+130 verbose afterAdd /Users/jean-francoisquaderi/.npm/nan/2.2.1/package/package.json written
+131 silly loadAllDepsIntoIdealTree Finishing
+132 silly idealTree:prePrune geekincwidget@1.0.0
+132 silly idealTree:prePrune ├── accepts@1.2.13
+132 silly idealTree:prePrune ├── after@0.8.1
+132 silly idealTree:prePrune ├── array-flatten@1.1.1
+132 silly idealTree:prePrune ├── arraybuffer.slice@0.0.6
+132 silly idealTree:prePrune ├── backo2@1.0.2
+132 silly idealTree:prePrune ├── base64-arraybuffer@0.1.2
+132 silly idealTree:prePrune ├── base64id@0.1.0
+132 silly idealTree:prePrune ├── benchmark@1.0.0
+132 silly idealTree:prePrune ├── better-assert@1.0.2
+132 silly idealTree:prePrune ├── blob@0.0.4
+132 silly idealTree:prePrune ├── bson@0.4.22
+132 silly idealTree:prePrune ├── callsite@1.0.0
+132 silly idealTree:prePrune ├── canvas@1.3.12
+132 silly idealTree:prePrune ├── component-bind@1.0.0
+132 silly idealTree:prePrune ├── component-emitter@1.1.2
+132 silly idealTree:prePrune ├── component-inherit@0.0.3
+132 silly idealTree:prePrune ├── content-disposition@0.5.1
+132 silly idealTree:prePrune ├── content-type@1.0.1
+132 silly idealTree:prePrune ├── cookie-signature@1.0.6
+132 silly idealTree:prePrune ├── cookie@0.1.5
+132 silly idealTree:prePrune ├── core-util-is@1.0.2
+132 silly idealTree:prePrune ├── debug@2.2.0
+132 silly idealTree:prePrune ├── depd@1.1.0
+132 silly idealTree:prePrune ├── destroy@1.0.4
+132 silly idealTree:prePrune ├── ee-first@1.1.1
+132 silly idealTree:prePrune ├── engine.io-client@1.6.8
+132 silly idealTree:prePrune ├─┬ engine.io-parser@1.2.4
+132 silly idealTree:prePrune │ └── has-binary@0.1.6
+132 silly idealTree:prePrune ├─┬ engine.io@1.6.8
+132 silly idealTree:prePrune │ ├── accepts@1.1.4
+132 silly idealTree:prePrune │ ├── mime-db@1.12.0
+132 silly idealTree:prePrune │ ├── mime-types@2.0.14
+132 silly idealTree:prePrune │ └── negotiator@0.4.9
+132 silly idealTree:prePrune ├── es6-promise@3.0.2
+132 silly idealTree:prePrune ├── escape-html@1.0.3
+132 silly idealTree:prePrune ├── etag@1.7.0
+132 silly idealTree:prePrune ├── express@4.13.4
+132 silly idealTree:prePrune ├── finalhandler@0.4.1
+132 silly idealTree:prePrune ├── forwarded@0.1.0
+132 silly idealTree:prePrune ├── fresh@0.3.0
+132 silly idealTree:prePrune ├── has-binary@0.1.7
+132 silly idealTree:prePrune ├── has-cors@1.1.0
+132 silly idealTree:prePrune ├── http-errors@1.3.1
+132 silly idealTree:prePrune ├── indexof@0.0.1
+132 silly idealTree:prePrune ├── inherits@2.0.1
+132 silly idealTree:prePrune ├── ipaddr.js@1.0.5
+132 silly idealTree:prePrune ├── isarray@0.0.1
+132 silly idealTree:prePrune ├── json3@3.2.6
+132 silly idealTree:prePrune ├── media-typer@0.3.0
+132 silly idealTree:prePrune ├── merge-descriptors@1.0.1
+132 silly idealTree:prePrune ├── methods@1.1.2
+132 silly idealTree:prePrune ├── mime-db@1.22.0
+132 silly idealTree:prePrune ├── mime-types@2.1.10
+132 silly idealTree:prePrune ├── mime@1.3.4
+132 silly idealTree:prePrune ├── mongodb-core@1.3.1
+132 silly idealTree:prePrune ├── mongodb@2.1.7
+132 silly idealTree:prePrune ├── ms@0.7.1
+132 silly idealTree:prePrune ├── nan@2.2.1
+132 silly idealTree:prePrune ├── negotiator@0.5.3
+132 silly idealTree:prePrune ├── object-component@0.0.3
+132 silly idealTree:prePrune ├── on-finished@2.3.0
+132 silly idealTree:prePrune ├── options@0.0.6
+132 silly idealTree:prePrune ├── parsejson@0.0.1
+132 silly idealTree:prePrune ├── parseqs@0.0.2
+132 silly idealTree:prePrune ├── parseuri@0.0.4
+132 silly idealTree:prePrune ├── parseurl@1.3.1
+132 silly idealTree:prePrune ├── path-to-regexp@0.1.7
+132 silly idealTree:prePrune ├── proxy-addr@1.0.10
+132 silly idealTree:prePrune ├── qr-js@1.1.4
+132 silly idealTree:prePrune ├── qs@4.0.0
+132 silly idealTree:prePrune ├── range-parser@1.0.3
+132 silly idealTree:prePrune ├── readable-stream@1.0.31
+132 silly idealTree:prePrune ├── require_optional@1.0.0
+132 silly idealTree:prePrune ├── resolve-from@2.0.0
+132 silly idealTree:prePrune ├── semver@5.1.0
+132 silly idealTree:prePrune ├── send@0.13.1
+132 silly idealTree:prePrune ├── serve-static@1.10.2
+132 silly idealTree:prePrune ├─┬ socket.io-adapter@0.4.0
+132 silly idealTree:prePrune │ └─┬ socket.io-parser@2.2.2
+132 silly idealTree:prePrune │   └── debug@0.7.4
+132 silly idealTree:prePrune ├─┬ socket.io-client@1.4.5
+132 silly idealTree:prePrune │ └── component-emitter@1.2.0
+132 silly idealTree:prePrune ├─┬ socket.io-parser@2.2.6
+132 silly idealTree:prePrune │ └── json3@3.3.2
+132 silly idealTree:prePrune ├── socket.io@1.4.5
+132 silly idealTree:prePrune ├── statuses@1.2.1
+132 silly idealTree:prePrune ├── string_decoder@0.10.31
+132 silly idealTree:prePrune ├── to-array@0.1.4
+132 silly idealTree:prePrune ├── type-is@1.6.12
+132 silly idealTree:prePrune ├── ultron@1.0.2
+132 silly idealTree:prePrune ├── unpipe@1.0.0
+132 silly idealTree:prePrune ├── utf8@2.1.0
+132 silly idealTree:prePrune ├── utils-merge@1.0.0
+132 silly idealTree:prePrune ├── vary@1.0.1
+132 silly idealTree:prePrune ├── ws@1.0.1
+132 silly idealTree:prePrune ├── xmlhttprequest-ssl@1.5.1
+132 silly idealTree:prePrune └── yeast@0.1.2
+133 silly loadIdealTree Finishing
+134 silly currentTree geekincwidget@1.0.0
+134 silly currentTree ├── accepts@1.2.13
+134 silly currentTree ├── after@0.8.1
+134 silly currentTree ├── array-flatten@1.1.1
+134 silly currentTree ├── arraybuffer.slice@0.0.6
+134 silly currentTree ├── backo2@1.0.2
+134 silly currentTree ├── base64-arraybuffer@0.1.2
+134 silly currentTree ├── base64id@0.1.0
+134 silly currentTree ├── benchmark@1.0.0
+134 silly currentTree ├── better-assert@1.0.2
+134 silly currentTree ├── blob@0.0.4
+134 silly currentTree ├── bson@0.4.22
+134 silly currentTree ├── callsite@1.0.0
+134 silly currentTree ├── component-bind@1.0.0
+134 silly currentTree ├── component-emitter@1.1.2
+134 silly currentTree ├── component-inherit@0.0.3
+134 silly currentTree ├── content-disposition@0.5.1
+134 silly currentTree ├── content-type@1.0.1
+134 silly currentTree ├── cookie-signature@1.0.6
+134 silly currentTree ├── cookie@0.1.5
+134 silly currentTree ├── core-util-is@1.0.2
+134 silly currentTree ├── debug@2.2.0
+134 silly currentTree ├── depd@1.1.0
+134 silly currentTree ├── destroy@1.0.4
+134 silly currentTree ├── ee-first@1.1.1
+134 silly currentTree ├── engine.io-client@1.6.8
+134 silly currentTree ├─┬ engine.io-parser@1.2.4
+134 silly currentTree │ └── has-binary@0.1.6
+134 silly currentTree ├─┬ engine.io@1.6.8
+134 silly currentTree │ ├── accepts@1.1.4
+134 silly currentTree │ ├── mime-db@1.12.0
+134 silly currentTree │ ├── mime-types@2.0.14
+134 silly currentTree │ └── negotiator@0.4.9
+134 silly currentTree ├── es6-promise@3.0.2
+134 silly currentTree ├── escape-html@1.0.3
+134 silly currentTree ├── etag@1.7.0
+134 silly currentTree ├── express@4.13.4
+134 silly currentTree ├── finalhandler@0.4.1
+134 silly currentTree ├── forwarded@0.1.0
+134 silly currentTree ├── fresh@0.3.0
+134 silly currentTree ├── has-binary@0.1.7
+134 silly currentTree ├── has-cors@1.1.0
+134 silly currentTree ├── http-errors@1.3.1
+134 silly currentTree ├── indexof@0.0.1
+134 silly currentTree ├── inherits@2.0.1
+134 silly currentTree ├── ipaddr.js@1.0.5
+134 silly currentTree ├── isarray@0.0.1
+134 silly currentTree ├── json3@3.2.6
+134 silly currentTree ├── media-typer@0.3.0
+134 silly currentTree ├── merge-descriptors@1.0.1
+134 silly currentTree ├── methods@1.1.2
+134 silly currentTree ├── mime-db@1.22.0
+134 silly currentTree ├── mime-types@2.1.10
+134 silly currentTree ├── mime@1.3.4
+134 silly currentTree ├── mongodb-core@1.3.1
+134 silly currentTree ├── mongodb@2.1.7
+134 silly currentTree ├── ms@0.7.1
+134 silly currentTree ├── negotiator@0.5.3
+134 silly currentTree ├── object-component@0.0.3
+134 silly currentTree ├── on-finished@2.3.0
+134 silly currentTree ├── options@0.0.6
+134 silly currentTree ├── parsejson@0.0.1
+134 silly currentTree ├── parseqs@0.0.2
+134 silly currentTree ├── parseuri@0.0.4
+134 silly currentTree ├── parseurl@1.3.1
+134 silly currentTree ├── path-to-regexp@0.1.7
+134 silly currentTree ├── proxy-addr@1.0.10
+134 silly currentTree ├── qs@4.0.0
+134 silly currentTree ├── range-parser@1.0.3
+134 silly currentTree ├── readable-stream@1.0.31
+134 silly currentTree ├── require_optional@1.0.0
+134 silly currentTree ├── resolve-from@2.0.0
+134 silly currentTree ├── semver@5.1.0
+134 silly currentTree ├── send@0.13.1
+134 silly currentTree ├── serve-static@1.10.2
+134 silly currentTree ├─┬ socket.io-adapter@0.4.0
+134 silly currentTree │ └─┬ socket.io-parser@2.2.2
+134 silly currentTree │   └── debug@0.7.4
+134 silly currentTree ├─┬ socket.io-client@1.4.5
+134 silly currentTree │ └── component-emitter@1.2.0
+134 silly currentTree ├─┬ socket.io-parser@2.2.6
+134 silly currentTree │ └── json3@3.3.2
+134 silly currentTree ├── socket.io@1.4.5
+134 silly currentTree ├── statuses@1.2.1
+134 silly currentTree ├── string_decoder@0.10.31
+134 silly currentTree ├── to-array@0.1.4
+134 silly currentTree ├── type-is@1.6.12
+134 silly currentTree ├── ultron@1.0.2
+134 silly currentTree ├── unpipe@1.0.0
+134 silly currentTree ├── utf8@2.1.0
+134 silly currentTree ├── utils-merge@1.0.0
+134 silly currentTree ├── vary@1.0.1
+134 silly currentTree ├── ws@1.0.1
+134 silly currentTree ├── xmlhttprequest-ssl@1.5.1
+134 silly currentTree └── yeast@0.1.2
+135 silly idealTree geekincwidget@1.0.0
+135 silly idealTree ├── accepts@1.2.13
+135 silly idealTree ├── after@0.8.1
+135 silly idealTree ├── array-flatten@1.1.1
+135 silly idealTree ├── arraybuffer.slice@0.0.6
+135 silly idealTree ├── backo2@1.0.2
+135 silly idealTree ├── base64-arraybuffer@0.1.2
+135 silly idealTree ├── base64id@0.1.0
+135 silly idealTree ├── benchmark@1.0.0
+135 silly idealTree ├── better-assert@1.0.2
+135 silly idealTree ├── blob@0.0.4
+135 silly idealTree ├── bson@0.4.22
+135 silly idealTree ├── callsite@1.0.0
+135 silly idealTree ├── canvas@1.3.12
+135 silly idealTree ├── component-bind@1.0.0
+135 silly idealTree ├── component-emitter@1.1.2
+135 silly idealTree ├── component-inherit@0.0.3
+135 silly idealTree ├── content-disposition@0.5.1
+135 silly idealTree ├── content-type@1.0.1
+135 silly idealTree ├── cookie-signature@1.0.6
+135 silly idealTree ├── cookie@0.1.5
+135 silly idealTree ├── core-util-is@1.0.2
+135 silly idealTree ├── debug@2.2.0
+135 silly idealTree ├── depd@1.1.0
+135 silly idealTree ├── destroy@1.0.4
+135 silly idealTree ├── ee-first@1.1.1
+135 silly idealTree ├── engine.io-client@1.6.8
+135 silly idealTree ├─┬ engine.io-parser@1.2.4
+135 silly idealTree │ └── has-binary@0.1.6
+135 silly idealTree ├─┬ engine.io@1.6.8
+135 silly idealTree │ ├── accepts@1.1.4
+135 silly idealTree │ ├── mime-db@1.12.0
+135 silly idealTree │ ├── mime-types@2.0.14
+135 silly idealTree │ └── negotiator@0.4.9
+135 silly idealTree ├── es6-promise@3.0.2
+135 silly idealTree ├── escape-html@1.0.3
+135 silly idealTree ├── etag@1.7.0
+135 silly idealTree ├── express@4.13.4
+135 silly idealTree ├── finalhandler@0.4.1
+135 silly idealTree ├── forwarded@0.1.0
+135 silly idealTree ├── fresh@0.3.0
+135 silly idealTree ├── has-binary@0.1.7
+135 silly idealTree ├── has-cors@1.1.0
+135 silly idealTree ├── http-errors@1.3.1
+135 silly idealTree ├── indexof@0.0.1
+135 silly idealTree ├── inherits@2.0.1
+135 silly idealTree ├── ipaddr.js@1.0.5
+135 silly idealTree ├── isarray@0.0.1
+135 silly idealTree ├── json3@3.2.6
+135 silly idealTree ├── media-typer@0.3.0
+135 silly idealTree ├── merge-descriptors@1.0.1
+135 silly idealTree ├── methods@1.1.2
+135 silly idealTree ├── mime-db@1.22.0
+135 silly idealTree ├── mime-types@2.1.10
+135 silly idealTree ├── mime@1.3.4
+135 silly idealTree ├── mongodb-core@1.3.1
+135 silly idealTree ├── mongodb@2.1.7
+135 silly idealTree ├── ms@0.7.1
+135 silly idealTree ├── nan@2.2.1
+135 silly idealTree ├── negotiator@0.5.3
+135 silly idealTree ├── object-component@0.0.3
+135 silly idealTree ├── on-finished@2.3.0
+135 silly idealTree ├── options@0.0.6
+135 silly idealTree ├── parsejson@0.0.1
+135 silly idealTree ├── parseqs@0.0.2
+135 silly idealTree ├── parseuri@0.0.4
+135 silly idealTree ├── parseurl@1.3.1
+135 silly idealTree ├── path-to-regexp@0.1.7
+135 silly idealTree ├── proxy-addr@1.0.10
+135 silly idealTree ├── qr-js@1.1.4
+135 silly idealTree ├── qs@4.0.0
+135 silly idealTree ├── range-parser@1.0.3
+135 silly idealTree ├── readable-stream@1.0.31
+135 silly idealTree ├── require_optional@1.0.0
+135 silly idealTree ├── resolve-from@2.0.0
+135 silly idealTree ├── semver@5.1.0
+135 silly idealTree ├── send@0.13.1
+135 silly idealTree ├── serve-static@1.10.2
+135 silly idealTree ├─┬ socket.io-adapter@0.4.0
+135 silly idealTree │ └─┬ socket.io-parser@2.2.2
+135 silly idealTree │   └── debug@0.7.4
+135 silly idealTree ├─┬ socket.io-client@1.4.5
+135 silly idealTree │ └── component-emitter@1.2.0
+135 silly idealTree ├─┬ socket.io-parser@2.2.6
+135 silly idealTree │ └── json3@3.3.2
+135 silly idealTree ├── socket.io@1.4.5
+135 silly idealTree ├── statuses@1.2.1
+135 silly idealTree ├── string_decoder@0.10.31
+135 silly idealTree ├── to-array@0.1.4
+135 silly idealTree ├── type-is@1.6.12
+135 silly idealTree ├── ultron@1.0.2
+135 silly idealTree ├── unpipe@1.0.0
+135 silly idealTree ├── utf8@2.1.0
+135 silly idealTree ├── utils-merge@1.0.0
+135 silly idealTree ├── vary@1.0.1
+135 silly idealTree ├── ws@1.0.1
+135 silly idealTree ├── xmlhttprequest-ssl@1.5.1
+135 silly idealTree └── yeast@0.1.2
+136 silly generateActionsToTake Starting
+137 silly install generateActionsToTake
+138 silly generateActionsToTake Finishing
+139 silly diffTrees action count 3
+140 silly diffTrees add nan@2.2.1
+141 silly diffTrees add canvas@1.3.12
+142 silly diffTrees add qr-js@1.1.4
+143 silly decomposeActions action count 24
+144 silly decomposeActions fetch nan@2.2.1
+145 silly decomposeActions extract nan@2.2.1
+146 silly decomposeActions test nan@2.2.1
+147 silly decomposeActions preinstall nan@2.2.1
+148 silly decomposeActions build nan@2.2.1
+149 silly decomposeActions install nan@2.2.1
+150 silly decomposeActions postinstall nan@2.2.1
+151 silly decomposeActions finalize nan@2.2.1
+152 silly decomposeActions fetch canvas@1.3.12
+153 silly decomposeActions extract canvas@1.3.12
+154 silly decomposeActions test canvas@1.3.12
+155 silly decomposeActions preinstall canvas@1.3.12
+156 silly decomposeActions build canvas@1.3.12
+157 silly decomposeActions install canvas@1.3.12
+158 silly decomposeActions postinstall canvas@1.3.12
+159 silly decomposeActions finalize canvas@1.3.12
+160 silly decomposeActions fetch qr-js@1.1.4
+161 silly decomposeActions extract qr-js@1.1.4
+162 silly decomposeActions test qr-js@1.1.4
+163 silly decomposeActions preinstall qr-js@1.1.4
+164 silly decomposeActions build qr-js@1.1.4
+165 silly decomposeActions install qr-js@1.1.4
+166 silly decomposeActions postinstall qr-js@1.1.4
+167 silly decomposeActions finalize qr-js@1.1.4
+168 silly executeActions Starting
+169 silly install executeActions
+170 silly doSerial global-install 0
+171 silly doParallel fetch 3
+172 verbose correctMkdir /Users/jean-francoisquaderi/.npm/_locks correctMkdir not in flight; initializing
+173 verbose lock using /Users/jean-francoisquaderi/.npm/_locks/staging-8dfe2b1f9531bcd1.lock for /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging
+174 silly doParallel extract 3
+175 silly extract nan@2.2.1
+176 silly extract canvas@1.3.12
+177 silly extract qr-js@1.1.4
+178 verbose unbuild node_modules/.staging/nan-660c74a1
+179 verbose unbuild node_modules/.staging/canvas-685f3095
+180 verbose unbuild node_modules/.staging/qr-js-2cd53b6a
+181 silly gentlyRm /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/nan-660c74a1 is being purged from base /Users/jean-francoisquaderi/Code/TwitchToast
+182 verbose gentlyRm don't care about contents; nuking /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/nan-660c74a1
+183 silly gentlyRm /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/canvas-685f3095 is being purged from base /Users/jean-francoisquaderi/Code/TwitchToast
+184 verbose gentlyRm don't care about contents; nuking /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/canvas-685f3095
+185 silly gentlyRm /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/qr-js-2cd53b6a is being purged from base /Users/jean-francoisquaderi/Code/TwitchToast
+186 verbose gentlyRm don't care about contents; nuking /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/qr-js-2cd53b6a
+187 verbose tar unpack /Users/jean-francoisquaderi/.npm/nan/2.2.1/package.tgz
+188 verbose tar unpacking to /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/nan-660c74a1
+189 silly gentlyRm /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/nan-660c74a1 is being purged
+190 verbose gentlyRm don't care about contents; nuking /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/nan-660c74a1
+191 verbose tar unpack /Users/jean-francoisquaderi/.npm/canvas/1.3.12/package.tgz
+192 verbose tar unpacking to /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/canvas-685f3095
+193 silly gentlyRm /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/canvas-685f3095 is being purged
+194 verbose gentlyRm don't care about contents; nuking /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/canvas-685f3095
+195 verbose tar unpack /Users/jean-francoisquaderi/.npm/qr-js/1.1.4/package.tgz
+196 verbose tar unpacking to /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/qr-js-2cd53b6a
+197 silly gentlyRm /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/qr-js-2cd53b6a is being purged
+198 verbose gentlyRm don't care about contents; nuking /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/qr-js-2cd53b6a
+199 silly gunzTarPerm modes [ '755', '644' ]
+200 silly gunzTarPerm modes [ '755', '644' ]
+201 silly gunzTarPerm modes [ '755', '644' ]
+202 silly gunzTarPerm extractEntry package.json
+203 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+204 silly gunzTarPerm extractEntry package.json
+205 silly gunzTarPerm extractEntry package.json
+206 silly gunzTarPerm extractEntry include_dirs.js
+207 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
+208 silly gunzTarPerm extractEntry nan_converters.h
+209 silly gunzTarPerm modified mode [ 'nan_converters.h', 436, 420 ]
+210 silly gunzTarPerm extractEntry .npmignore
+211 silly gunzTarPerm extractEntry index.js
+212 silly gunzTarPerm extractEntry .npmignore
+213 silly gunzTarPerm extractEntry README.md
+214 silly gunzTarPerm extractEntry Readme.md
+215 silly gunzTarPerm extractEntry binding.gyp
+216 silly gunzTarPerm extractEntry LICENSE.md
+217 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+218 silly gunzTarPerm extractEntry .dntrc
+219 silly gunzTarPerm modified mode [ '.dntrc', 436, 420 ]
+220 silly gunzTarPerm extractEntry qr.js
+221 silly gunzTarPerm extractEntry LICENSE.md
+222 silly gunzTarPerm extractEntry .c9/.nakignore
+223 silly gunzTarPerm extractEntry .c9/metadata/tab1
+224 silly gunzTarPerm extractEntry .c9/metadata/workspace/package.json
+225 silly gunzTarPerm extractEntry .c9/metadata/workspace/.npmignore
+226 silly gunzTarPerm extractEntry .c9/metadata/workspace/README.md
+227 silly gunzTarPerm extractEntry .c9/metadata/workspace/qr.js
+228 silly gunzTarPerm extractEntry .c9/metadata/workspace/CHANGES.md
+229 silly gunzTarPerm extractEntry .c9/metadata/workspace/LICENSE.md
+230 silly gunzTarPerm extractEntry .c9/project.settings
+231 silly gunzTarPerm extractEntry CHANGES.md
+232 silly gunzTarPerm extractEntry appveyor.yml
+233 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 420 ]
+234 silly gunzTarPerm extractEntry doc/new.md
+235 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 420 ]
+236 silly gunzTarPerm extractEntry .travis.yml
+237 silly gunzTarPerm extractEntry doc/.build.sh
+238 silly gunzTarPerm modified mode [ 'doc/.build.sh', 509, 493 ]
+239 silly gunzTarPerm extractEntry lib/bindings.js
+240 silly gunzTarPerm extractEntry lib/canvas.js
+241 silly gunzTarPerm extractEntry lib/context2d.js
+242 silly gunzTarPerm extractEntry lib/image.js
+243 silly gunzTarPerm extractEntry doc/buffers.md
+244 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 420 ]
+245 silly gunzTarPerm extractEntry doc/callback.md
+246 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 420 ]
+247 silly gunzTarPerm extractEntry lib/jpegstream.js
+248 silly gunzTarPerm extractEntry lib/pngstream.js
+249 silly gunzTarPerm extractEntry doc/converters.md
+250 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 420 ]
+251 silly gunzTarPerm extractEntry doc/errors.md
+252 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 420 ]
+253 silly gunzTarPerm extractEntry History.md
+254 silly gunzTarPerm extractEntry src/Image.cc
+255 silly gunzTarPerm extractEntry doc/maybe_types.md
+256 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 420 ]
+257 silly gunzTarPerm extractEntry doc/methods.md
+258 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 420 ]
+259 silly gunzTarPerm extractEntry src/Canvas.cc
+260 silly gunzTarPerm extractEntry src/CanvasGradient.cc
+261 silly gunzTarPerm extractEntry doc/asyncworker.md
+262 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 420 ]
+263 silly gunzTarPerm extractEntry doc/node_misc.md
+264 silly gunzTarPerm modified mode [ 'doc/node_misc.md', 436, 420 ]
+265 silly gunzTarPerm extractEntry doc/object_wrappers.md
+266 silly gunzTarPerm modified mode [ 'doc/object_wrappers.md', 436, 420 ]
+267 silly gunzTarPerm extractEntry doc/persistent.md
+268 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 420 ]
+269 silly gunzTarPerm extractEntry src/CanvasGradient.h
+270 silly gunzTarPerm extractEntry src/CanvasPattern.cc
+271 silly gunzTarPerm extractEntry doc/scopes.md
+272 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 420 ]
+273 silly gunzTarPerm extractEntry doc/script.md
+274 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 420 ]
+275 silly gunzTarPerm extractEntry src/CanvasPattern.h
+276 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.cc
+277 silly gunzTarPerm extractEntry doc/string_bytes.md
+278 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 420 ]
+279 silly gunzTarPerm extractEntry doc/v8_internals.md
+280 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 420 ]
+281 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.h
+282 silly gunzTarPerm extractEntry src/FontFace.cc
+283 silly gunzTarPerm extractEntry doc/v8_misc.md
+284 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 420 ]
+285 silly gunzTarPerm extractEntry nan.h
+286 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+287 silly gunzTarPerm extractEntry src/FontFace.h
+288 silly gunzTarPerm extractEntry src/Canvas.h
+289 silly gunzTarPerm extractEntry nan_callbacks.h
+290 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 420 ]
+291 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+292 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 420 ]
+293 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+294 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 420 ]
+295 silly gunzTarPerm extractEntry src/Image.h
+296 silly gunzTarPerm extractEntry src/ImageData.cc
+297 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+298 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 420 ]
+299 silly gunzTarPerm extractEntry src/ImageData.h
+300 silly gunzTarPerm extractEntry src/JPEGStream.h
+301 silly gunzTarPerm extractEntry src/PNG.h
+302 silly gunzTarPerm extractEntry src/Point.h
+303 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+304 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 420 ]
+305 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+306 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+307 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+308 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+309 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+310 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 420 ]
+311 silly gunzTarPerm extractEntry src/closure.h
+312 silly gunzTarPerm extractEntry src/color.cc
+313 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+314 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 420 ]
+315 silly gunzTarPerm extractEntry nan_new.h
+316 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+317 silly gunzTarPerm extractEntry src/color.h
+318 silly gunzTarPerm extractEntry src/init.cc
+319 silly gunzTarPerm extractEntry nan_object_wrap.h
+320 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 420 ]
+321 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+322 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 420 ]
+323 silly gunzTarPerm extractEntry util/has_lib.sh
+324 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+325 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 420 ]
+326 silly gunzTarPerm extractEntry nan_string_bytes.h
+327 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+328 silly gentlyRm /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/qr-js-2cd53b6a/node_modules is being purged
+329 verbose gentlyRm don't care about contents; nuking /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/qr-js-2cd53b6a/node_modules
+330 silly gunzTarPerm extractEntry nan_typedarray_contents.h
+331 silly gunzTarPerm modified mode [ 'nan_typedarray_contents.h', 436, 420 ]
+332 silly gunzTarPerm extractEntry nan_weak.h
+333 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 420 ]
+334 silly gunzTarPerm extractEntry CHANGELOG.md
+335 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+336 silly gunzTarPerm extractEntry tools/package.json
+337 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 420 ]
+338 silly gunzTarPerm extractEntry tools/README.md
+339 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 420 ]
+340 silly gunzTarPerm extractEntry tools/1to2.js
+341 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 493 ]
+342 silly gentlyRm /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/canvas-685f3095/node_modules is being purged
+343 verbose gentlyRm don't care about contents; nuking /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/canvas-685f3095/node_modules
+344 silly gentlyRm /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/nan-660c74a1/node_modules is being purged
+345 verbose gentlyRm don't care about contents; nuking /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/nan-660c74a1/node_modules
+346 silly doParallel preinstall 3
+347 silly preinstall nan@2.2.1 /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/nan-660c74a1
+348 info lifecycle nan@2.2.1~preinstall: nan@2.2.1
+349 silly preinstall canvas@1.3.12 /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/canvas-685f3095
+350 info lifecycle canvas@1.3.12~preinstall: canvas@1.3.12
+351 silly preinstall qr-js@1.1.4 /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/qr-js-2cd53b6a
+352 info lifecycle qr-js@1.1.4~preinstall: qr-js@1.1.4
+353 silly lifecycle nan@2.2.1~preinstall: no script for preinstall, continuing
+354 silly lifecycle canvas@1.3.12~preinstall: no script for preinstall, continuing
+355 silly lifecycle qr-js@1.1.4~preinstall: no script for preinstall, continuing
+356 silly doReverseSerial remove 0
+357 silly doSerial move 0
+358 silly doSerial finalize 3
+359 silly finalize /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/nan
+360 silly finalize /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/canvas
+361 silly finalize /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/qr-js
+362 silly doSerial build 3
+363 silly build nan@2.2.1
+364 info linkStuff nan@2.2.1
+365 silly linkStuff nan@2.2.1 has /Users/jean-francoisquaderi/Code/TwitchToast/node_modules as its parent node_modules
+366 verbose linkBins nan@2.2.1
+367 verbose linkMans nan@2.2.1
+368 silly build canvas@1.3.12
+369 info linkStuff canvas@1.3.12
+370 silly linkStuff canvas@1.3.12 has /Users/jean-francoisquaderi/Code/TwitchToast/node_modules as its parent node_modules
+371 verbose linkBins canvas@1.3.12
+372 verbose linkMans canvas@1.3.12
+373 silly build qr-js@1.1.4
+374 info linkStuff qr-js@1.1.4
+375 silly linkStuff qr-js@1.1.4 has /Users/jean-francoisquaderi/Code/TwitchToast/node_modules as its parent node_modules
+376 verbose linkBins qr-js@1.1.4
+377 verbose linkMans qr-js@1.1.4
+378 silly doSerial global-link 0
+379 silly doParallel update-linked 0
+380 silly doSerial install 3
+381 silly install nan@2.2.1 /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/nan-660c74a1
+382 info lifecycle nan@2.2.1~install: nan@2.2.1
+383 silly lifecycle nan@2.2.1~install: no script for install, continuing
+384 silly install canvas@1.3.12 /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging/canvas-685f3095
+385 info lifecycle canvas@1.3.12~install: canvas@1.3.12
+386 verbose lifecycle canvas@1.3.12~install: unsafe-perm in lifecycle false
+387 verbose lifecycle canvas@1.3.12~install: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/jean-francoisquaderi/Code/TwitchToast/node_modules/canvas/node_modules/.bin:/Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+388 verbose lifecycle canvas@1.3.12~install: CWD: /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/canvas
+389 silly lifecycle canvas@1.3.12~install: Args: [ '-c', 'node-gyp rebuild' ]
+390 silly lifecycle canvas@1.3.12~install: Returned: code: 1  signal: null
+391 info lifecycle canvas@1.3.12~install: Failed to exec install script
+392 verbose unlock done using /Users/jean-francoisquaderi/.npm/_locks/staging-8dfe2b1f9531bcd1.lock for /Users/jean-francoisquaderi/Code/TwitchToast/node_modules/.staging
+393 silly rollbackFailedOptional Starting
+394 silly rollbackFailedOptional Finishing
+395 silly runTopLevelLifecycles Starting
+396 silly runTopLevelLifecycles Finishing
+397 silly install printInstalled
+398 warn geekincwidget@1.0.0 No repository field.
+399 verbose stack Error: canvas@1.3.12 install: `node-gyp rebuild`
+399 verbose stack Exit status 1
+399 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:232:16)
+399 verbose stack     at emitTwo (events.js:100:13)
+399 verbose stack     at EventEmitter.emit (events.js:185:7)
+399 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+399 verbose stack     at emitTwo (events.js:100:13)
+399 verbose stack     at ChildProcess.emit (events.js:185:7)
+399 verbose stack     at maybeClose (internal/child_process.js:827:16)
+399 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+400 verbose pkgid canvas@1.3.12
+401 verbose cwd /Users/jean-francoisquaderi/Code/TwitchToast
+402 error Darwin 15.4.0
+403 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "qr-js" "--save"
+404 error node v5.6.0
+405 error npm  v3.6.0
+406 error code ELIFECYCLE
+407 error canvas@1.3.12 install: `node-gyp rebuild`
+407 error Exit status 1
+408 error Failed at the canvas@1.3.12 install script 'node-gyp rebuild'.
+408 error Make sure you have the latest version of node.js and npm installed.
+408 error If you do, this is most likely a problem with the canvas package,
+408 error not with npm itself.
+408 error Tell the author that this fails on your system:
+408 error     node-gyp rebuild
+408 error You can get information on how to open an issue for this project with:
+408 error     npm bugs canvas
+408 error Or if that isn't available, you can get their info via:
+408 error     npm owner ls canvas
+408 error There is likely additional logging output above.
+409 verbose exit [ 1, true ]
