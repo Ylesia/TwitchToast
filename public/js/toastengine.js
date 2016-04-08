@@ -39,12 +39,12 @@ function configLoopToasts(LoopDuration){
     //Point d'arrivée de la boucle
     var loopEnd = new Date().getTime() + (LoopDuration * 1000);
     //Si le nombre de toast en boucle n'est pas nul
-    if (toastNumbers = 0){
+    if (toastNumbers != 0){
     //Création du Scénarion de boucle,
         //Déclaration du timer et de la fonction de boucle
         var timeoutID;
         
-        var LastToast = toastNumbers -1;
+        var LastToast = toastNumbers;
         //mise en variable du nombre de toast à afficher
         loopToasts(LastToast, loopEnd)
     }
