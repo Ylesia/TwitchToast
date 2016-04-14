@@ -10,12 +10,12 @@
         <img id="qr" class="hidden transition qr-geekinc" src="">
     </body>
     <script type="text/javascript">
-        function generateQR(qrstring){
-            if (qrstring.indexof("http") != -1){
-                var url = "http://chart.apis.google.com/chart?cht=qr&amp;chs=150x150&amp;chl=";
-                url += qrstring.slice(qrstring.indexof("http"));
-            }
-        }   
+        // function generateQR(qrstring){
+        //     if (qrstring.indexof("http") != -1){
+        //         var url = "http://chart.apis.google.com/chart?cht=qr&amp;chs=150x150&amp;chl=";
+        //         url += qrstring.slice(qrstring.indexof("http"));
+        //     }
+        // }   
         var socket = io.connect();
         socket.on('newTitle', function (title){
             var titleContainer = document.getElementById('title');
