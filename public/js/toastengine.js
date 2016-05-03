@@ -29,13 +29,14 @@ function loopToasts(LastToast,loopEnd){
         window.setTimeout(updateTitleLoop(paramTitle,paramDuration), new toastTimer(paramDuration));
         //retour au premier toast si on arrive à la fin du tableau
     }
-    while (Date.now().getTime() < loopEnd){
+    var now = Date.now();
+    while (now.getTime() < loopEnd){
         loopToasts(LastToast, loopEnd)
     }
 }
 function configLoopToasts(LoopDuration){
     //récupération du nombre de toast dans l'array, retranche 1 car array start à 0
-    toastNumbers = tabListToastsLoop.length - 1;
+    var toastNumbers = tabListToastsLoop[0].length - 1;
     //Point d'arrivée de la boucle
     var loopEnd = new Date().getTime() + (LoopDuration * 1000);
     //Si le nombre de toast en boucle n'est pas nul
