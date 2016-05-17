@@ -12,27 +12,38 @@ function updateTitle(id) {
 function updateTitleLoop(paramTitle, paramDuration) {
     socket.emit('setNewTitle', { text : paramTitle, timeout: paramDuration});
 }
+function endTitle(id) {
+    var duration = 1;
+    socket.emit('setNewTitle', { text : document.getElementById("title"+id+"").value, timeout: duration});
+}
 
 //Fonctions de boucles
 function loopToasts(LastToast,loopEnd){
     
-    for (i=0;i<=LastToast;i++){
-
-        var paramTitle = tabListToastsLoop[i,1];
-        var paramDuration = tabListToastsLoop[i,2];
-        
-        function toastTimer(Input){
-            var nextToast = Input + 4
+    function toastTimer(Input){
+            var nextToast = Input += 4
             return nextToast + 4;
         }
+        
+    for (i=0;i<=LastToast;i++){
+
+        var paramTitle = tabListToastsLoop[i][1];
+        var paramDuration = tabListToastsLoop[i][2];
         var currentTimer = toastTimer(paramDuration);
-        window.setTimeout(updateTitleLoop(paramTitle,paramDuration), new currentTimer);
-        //retour au premier toast si on arrive à la fin du tableau
+        
+        window.setTimeout(updateTitleLoop(paramTitle,paramDuration), currentTimer);
+        
+        
     }
+    //Sortie de boucle, impression de la date présente
     var now = Date.now();
-    while (now.getTime() < loopEnd){
-        loopToasts(LastToast, loopEnd)
+    //retour au premier toast si on arrive à la fin du tableau et si on se trouve encore dans la fourchette de temps de la boucle
+    //Si ce n'est pas le cas, récursivité.
+    while (now < loopEnd){
+        loopToasts(LastToast, loopEnd);
     }
+    endTitle(1)
+    
 }
 
 function configLoopToasts(LoopDuration){
@@ -80,7 +91,7 @@ function updateLoopList() {
             }
             //Ordre, Titre et Durée intégrée dans l'array de boucle
             var toastNumbers = tabListToastsLoop.length
-            tabListToastsLoop[toastNumbers] = [i,toastTitle,toastduration];
+            tabListToastsLoop[toastNumbers] = new Array([i],[toastTitle],[toastduration]);
         } 
     }
    
