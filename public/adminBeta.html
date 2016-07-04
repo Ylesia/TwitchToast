@@ -1,132 +1,142 @@
 <!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <link href="css/styleAdmin.css" type="text/css" rel="stylesheet"></link>
-        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-        <script type="text/javascript" src="js/dragAndDrop.js"></script>
-        <script type="text/javascript" src="js/toastengine.js"></script>
-    </head>
-    <body>
-        <header>
-            TwitchToast Admin
-        </header>
-        
-        <aside>
-            Sélection d'une scène :
-            <!--Faire Boucler les différentes scènes pour l'utilisateur connecté-->
-            <ul>
-                <a><li>Scène 1</li></a>
-                <a><li>Scène 2</li></a>
-                <a><li>Scène 3</li></a>
-                <a><li>Scène 4</li></a>
-            </ul>
-        </aside>
-        
-        <section class='toastList'>
-            <button onclick="addLayout()">+</button> </br>
-            
-            <!--<script type="text/javascript">
-                for(i=1;i<=toastNumbers; i++){
-                    document.write(
-                        <span class='toastParam'>
-                            <input type="text" id="title"+i+"" />
-                            <input type="text" id="duration1"+i+"" />
-                            <input type="checkbox" id="loop1"+i+"" />
-                            <button onclick="updateTitle("+i+")">update title</button> </br>
-                        </span>
-                    )
-                }-->
-            <!--</script>-->
-            
-            <ul>
-                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
-                    <input type="text" id="title1" />
-                    <input type="text" id="duration1" />
-                    <input type="checkbox" id="loop1" />
-                    <button onclick="updateTitle(1)">Update Title</button>
-                    <button onclick="endTitle(1)">End</button> </br>
-                </li>
-                
-                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
-                    <input type="text" id="title2" />
-                    <input type="text" id="duration2" />
-                    <input type="checkbox" id="loop2" />
-                    <button onclick="updateTitle(2)">update title</button>
-                    <button onclick="endTitle(2)">End</button> </br>
-                </li>
-                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
-                    <input type="text" id="title3" />
-                    <input type="text" id="duration3" />
-                    <input type="checkbox" id="loop3" />
-                    <button onclick="updateTitle(3)">update title</button>
-                    <button onclick="endTitle(3)">End</button> </br>
-                </li>
-                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
-                    <input type="text" id="title4" />
-                    <input type="text" id="duration4" />
-                    <input type="checkbox" id="loop4" />
-                    <button onclick="updateTitle(4)">update title</button>
-                    <button onclick="endTitle(4)">End</button> </br>
-                </li>
-                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
-                    <input type="text" id="title5" />
-                    <input type="text" id="duration5" />
-                    <input type="checkbox" id="loop5" />
-                    <button onclick="updateTitle(5)">update title</button>
-                    <button onclick="endTitle(5)">End</button> </br>
-                </li>
-                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
-                    <input type="text" id="title6" />
-                    <input type="text" id="duration6" />
-                    <input type="checkbox" id="loop6" />
-                    <button onclick="updateTitle(6)">update title</button>
-                    <button onclick="endTitle(6)">End</button> </br>
-                </li>
-                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
-                    <input type="text" id="title7" />
-                    <input type="text" id="duration7" />
-                    <input type="checkbox" id="loop7" />
-                    <button onclick="updateTitle(7)">update title</button>
-                    <button onclick="endTitle(7)">End</button> </br>
-                </li>
-                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
-                    <input type="text" id="title8" />
-                    <input type="text" id="duration8" />
-                    <input type="checkbox" id="loop8" />
-                    <button onclick="updateTitle(8)">update title</button>
-                    <button onclick="endTitle(8)">End</button> </br>
-                </li>
-                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
-                    <input type="text" id="title9" />
-                    <input type="text" id="duration9" />
-                    <input type="checkbox" id="loop9" />
-                    <button onclick="updateTitle(9)">update title</button>
-                    <button onclick="endTitle(9)">End</button> </br>
-                </li>
-                <li draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)">
-                    <input type="text" id="title10" />
-                    <input type="text" id="duration10" />
-                    <input type="checkbox" id="loop10" />
-                    <button onclick="updateTitle(10)">update title</button>
-                    <button onclick="endTitle(10)">End</button> </br>
-                </li>
-            </ul>
-            
-            <label for="durationloop">
+<head>
+  <meta charset="utf-8">
+
+  <title>Twitch Toast :: Admin Beta</title>
+
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/beta.css"  media="screen,projection"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="js/dragAndDrop.js"></script>
+  <script type="text/javascript" src="js/toastengine.js"></script>
+</head>
+
+<body id="page-top">
+  <header>
+    <nav class="top-nav">
+      <div class="container">
+        <div class="nav-wrapper"><a class="page-title">Administration :: Beta</a></div>
+      </div>
+    </nav>
+    <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
+    <ul id="nav-mobile" class="side-nav fixed">
+      <li class="bold"><a href="#" class="waves-effect waves-teal">Scene 1</a></li>
+      <li class="bold"><a href="#" class="waves-effect waves-teal">Scene 2</a></li>
+      <li class="bold"><a href="#" class="waves-effect waves-teal">Scene 3</a></li>
+      <li class="bold"><a href="#" class="waves-effect waves-teal">Scene 4</a></li>
+      <li class="bold"><a href="#" class="waves-effect waves-teal">Scene 5</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+          <div class="row">
+            <div class="col s12 m9">
+              <h1 class="header center-on-small-only">Enhance your titles</h1>
+              <h4 class ="light red-text text-lighten-4 center-on-small-only">Input your different titles, manage the looping effect and reorder them</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <div class="row">
+            <div class="col s12">
+              <ul id="titles">
+                <!-- will receive all the title modification -->
+              </ul>
+
+              <button class="btn waves-effect right" onclick="addLayout()">Add a new layout</button> </br>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <div class="row">
+            <div class="col s12">
+              <label for="durationloop">
                 <span>Durée de la boucle :</span>
                 <select id="durationloop" name="duartionloopselector">
-                <option value="300">5min</option>
-                <option value="600">10min</option>
-                <option value="900">15min</option>
-                <option value="1200">20min</option>
-                <option value="1500">25min</option>
-                <option value="1800">30min</option>
-                <option value="3600">1h</option>
+                  <option value="300">5min</option>
+                  <option value="600">10min</option>
+                  <option value="900">15min</option>
+                  <option value="1200">20min</option>
+                  <option value="1500">25min</option>
+                  <option value="1800">30min</option>
+                  <option value="3600">1h</option>
                 </select>
-            </label>
-            <button onclick="updateLoopList()">Loop</button> </br> 
-        </section>
+              </label>
+              <button class="btn waves-effect right" onclick="updateLoopList()">Loop</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </body>
+  </main>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        © 201X
+        <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.numeric.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/materialize.init.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    var MAX = 9;
+    var i = 0;
+
+    var titles = $("#titles");
+    for(;i<MAX;i++){
+      titles.append(
+        "<li draggable=\"true\" ondragenter=\"dragenter(event)\" ondragstart=\"dragstart(event)\">"+
+        "  <div class=\"row\">"+
+        "    <div class=\"col s1 input-field\">"+
+        "     <i class=\"material-icons hamburger-black\">menu</i>"+
+        "    </div>"+
+        "    <div class=\"col s3 input-field\">"+
+        "      <input type=\"text\" id=\"title"+i+"\" length=\"10\" />"+
+        "      <label for=\"title"+i+"\">Title</label>"+
+        "    </div>"+
+        "    <div class=\"col s2 input-field\">"+
+        "      <input type=\"text\" id=\"duration"+i+"\" />"+
+        "      <label for=\"duration"+i+"\">Duration</label>"+
+        "    </div>"+
+        "    <div class=\"col s2 input-field\">"+
+        "      <input type=\"checkbox\" id=\"loop"+i+"\" />"+
+        "      <label for=\"loop"+i+"\">loop</label>"+
+        "    </div>"+
+        "    <div class=\"col s2 input-field\">"+
+        "      <button class=\"btn waves-effect\" onclick=\"updateTitle("+i+")\">Update Title</button>"+
+        "    </div>"+
+        "    <div class=\"col s2 input-field\">"+
+        "      <button class=\"btn waves-effect\" onclick=\"endTitle("+i+")\">End</button>"+
+        "    </div>"+
+        "  </div>"+
+        "</li>");
+
+        $("#title"+i).characterCounter();
+        $("#duration"+i).numeric();
+      }
+    });
+    </script>
+  </script>
+</body>
 </html>
