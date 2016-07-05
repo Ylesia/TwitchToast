@@ -54,7 +54,12 @@
                 <!-- will receive all the title modification -->
               </ul>
 
-              <button class="btn waves-effect right" onclick="addLayout()">Add a new layout</button> </br>
+            </div>
+            <div class="col right">
+              <button class="btn waves-effect right" onclick="invalidateStore()">Save</button>
+            </div>
+            <div class="col left">
+              <button class="btn waves-effect" onclick="addLayout()">Add a new layout</button>
             </div>
           </div>
         </div>
@@ -98,29 +103,42 @@
   <script type="text/javascript" src="js/jquery.numeric.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script type="text/javascript" src="js/materialize.init.js"></script>
+  <script type="text/javascript" src="js/store.min.js"></script>
+  <script type="text/javascript" src="js/admin.store.js"></script>
   <script type="text/javascript">
+  var DEFAULT_TITLES_CARD = 9;
+
   $(document).ready(function() {
-    var MAX = 9;
     var i = 0;
+    var storage_length = 0;
+
+    checkStore();
+
+    var data = getStoredData();
+    if(data && data.length > 0)
+    storage_length = data.length;
+
+    storage_length = Math.max(DEFAULT_TITLES_CARD, storage_length);
+
 
     var titles = $("#titles");
-    for(;i<MAX;i++){
+    for(;i<storage_length;i++){
       titles.append(
-        "<li draggable=\"true\" ondragenter=\"dragenter(event)\" ondragstart=\"dragstart(event)\">"+
+        "<li draggable=\"true\" ondragenter=\"dragenter(event)\" ondragstart=\"dragstart(event)\" ondragend=\"invalidateStore()\">"+
         "  <div class=\"row\">"+
         "    <div class=\"col s1 input-field\">"+
         "     <i class=\"material-icons hamburger-black\">menu</i>"+
         "    </div>"+
         "    <div class=\"col s3 input-field\">"+
-        "      <input type=\"text\" id=\"title"+i+"\" length=\"10\" />"+
+        "      <input type=\"text\" name=\"title\" id=\"title"+i+"\" length=\"10\" />"+
         "      <label for=\"title"+i+"\">Title</label>"+
         "    </div>"+
         "    <div class=\"col s2 input-field\">"+
-        "      <input type=\"text\" id=\"duration"+i+"\" />"+
+        "      <input type=\"text\" name=\"duration\" id=\"duration"+i+"\" />"+
         "      <label for=\"duration"+i+"\">Duration</label>"+
         "    </div>"+
         "    <div class=\"col s2 input-field\">"+
-        "      <input type=\"checkbox\" id=\"loop"+i+"\" />"+
+        "      <input type=\"checkbox\" name=\"loop\" id=\"loop"+i+"\" />"+
         "      <label for=\"loop"+i+"\">loop</label>"+
         "    </div>"+
         "    <div class=\"col s2 input-field\">"+
@@ -135,6 +153,8 @@
         $("#title"+i).characterCounter();
         $("#duration"+i).numeric();
       }
+
+      restoreStore();
     });
     </script>
   </script>
