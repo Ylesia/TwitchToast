@@ -2,6 +2,10 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+
+var LocalStorage = require('node-localstorage').LocalStorage;
+localStorage = new LocalStorage('./scenes');
+
 //MongoDB
 // var MongoClient = require('mongodb').MongoClient;
 // var assert = require('assert')
@@ -22,8 +26,8 @@ var io = require('socket.io')(server);
 //FIN TESTS IMPORTS
 
 app.use(express.static('./public')) // Indique que le dossier /public contient des fichiers statiques (middleware chargé de base)
- .use(function(req, res){ // Répond enfin
-     res.send('Hello');
+.use(function(req, res){ // Répond enfin
+  res.send('Hello');
 });
 
 io.on('connection', function (socket) {
@@ -32,6 +36,20 @@ io.on('connection', function (socket) {
   socket.on('setNewTitle', function (data) {
     console.log(data);
     io.sockets.emit('newTitle', data);
+  });
+  socket.on('setData', function (data) {
+    console.log("saving");
+    console.log(data);
+    data = JSON.stringify(data);
+    localStorage.setItem("data", data);
+  });
+  socket.on('getData', function (data) {
+    var data = localStorage.getItem("data");
+
+    if(!data) data = [];
+    else data = JSON.parse(data);
+
+    socket.emit('data', data);
   });
 });
 

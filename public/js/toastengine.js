@@ -4,6 +4,20 @@ var tabListToastsLoop = [];
 
 //Fonctions d'update des Titres
 
+socket.on('data', function(data){
+  console.log(data);
+
+  restoreStore(data);
+});
+
+function getData(){
+  socket.emit('getData');
+}
+
+function sendData(data){
+  socket.emit('setData', data);
+}
+
 function updateTitle(id) {
   var duration = parseInt(document.getElementById("duration"+id+"").value, 10) || undefined;
   socket.emit('setNewTitle', { text : document.getElementById("title"+id+"").value, timeout: duration});
