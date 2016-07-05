@@ -19,17 +19,17 @@ function sendData(data){
 }
 
 function updateTitle(id) {
-  var duration = parseInt(document.getElementById("duration"+id+"").value, 10) || undefined;
-  socket.emit('setNewTitle', { text : document.getElementById("title"+id+"").value, timeout: duration});
+  var duration = parseInt($("#duration"+id).val(), 10) || undefined;
+  socket.emit('setNewTitle', { logo : $("#logo_hidden"+id).val(), text : $("#title"+id).val(), timeout: duration});
 }
 
-function updateTitleLoop(paramTitle, paramDuration) {
-  socket.emit('setNewTitle', { text : paramTitle, timeout: paramDuration});
+function updateTitleLoop(paramLogo, paramTitle, paramDuration) {
+  socket.emit('setNewTitle', { logo : paramLogo, text : paramTitle, timeout: paramDuration});
 }
 
 function endTitle(id) {
   var duration = 1;
-  socket.emit('setNewTitle', { text : document.getElementById("title"+id+"").value, timeout: duration});
+  socket.emit('setNewTitle', { logo : $("#logo_hidden"+id).val(), text : $("#title"+id).val(), timeout: duration});
 }
 
 //Fonctions de boucles
