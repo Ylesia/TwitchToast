@@ -2,32 +2,59 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var uuid = require('node-uuid');
+var fs = require('fs');
+var Busboy = require('busboy');
 
 var LocalStorage = require('node-localstorage').LocalStorage;
 localStorage = new LocalStorage('./scenes');
 
-//MongoDB
-// var MongoClient = require('mongodb').MongoClient;
-// var assert = require('assert')
-// var url = 'mongodb://localhost:27017/test';
-// //var url = 'mongodb://192.168.0.29:27017/test';
-// MongoClient.connect(url, function(err, db) {
-//   assert.equal(null, err);
-//   console.log("Connected correctly to server.");
-//   db.close();
-// });
-// //FINMONGODB
+var extension = function(filename){
+  if(!filename) filename = "";
+  return filename.substr(filename.lastIndexOf('.')+1)
+}
 
-// // TEST IMPORTS
-// var MongoClient = require('mongodb').MongoClient;
-// var assert = require('assert');
-// var ObjectId = require('mongodb').ObjectID;
-// var url = 'mongodb://localhost:27017/test';
-//FIN TESTS IMPORTS
+var checkFolder = function(path){
+  var ok = false;
+  try{
+    ok = !fs.accessSync(path);
+    return ok;
+  }catch(e){
+    return false;
+  }
+}
 
-app.use(express.static('./public')) // Indique que le dossier /public contient des fichiers statiques (middleware chargé de base)
+if(!checkFolder("public")){
+  fs.mkdirSync("public");
+}
+if(!checkFolder("public/upload")){
+  fs.mkdirSync("public/upload");
+}
+
+app
+.use(express.static('./public')) // Indique que le dossier /public contient des fichiers statiques (middleware chargé de base)
+.post("/api/upload", function(req, res){
+
+  var busboy = new Busboy({ headers: req.headers });
+  var path = "";
+  busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+    path = "/upload/"+uuid.v4()+"."+extension(filename);
+    var saveTo = "public"+path;
+    console.log("uploading to "+saveTo);
+    file.pipe(fs.createWriteStream(saveTo));
+
+  });
+  busboy.on('finish', function() {
+    if(path){
+      res.send(JSON.stringify({path:path}), {'Content-Type': 'text/plain'}, 200);
+    }else{
+      res.send(JSON.stringify({err:"err"}), {'Content-Type': 'text/plain'}, 200);
+    }
+  });
+  return req.pipe(busboy);
+})
 .use(function(req, res){ // Répond enfin
-  res.send('Hello');
+  res.send('Answer');
 });
 
 io.on('connection', function (socket) {
