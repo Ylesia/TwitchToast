@@ -3,6 +3,14 @@ var DEFAULT_ROWS_COUNT = 4;
 
 var _data_server = [];
 
+function findChannel(uuid){
+  var i = 0;
+  for(;i<_data_server.length;i++){
+    if(_data_server[i].uuid == uuid) return i;
+  }
+  return -1;
+}
+
 function loadChannel(index_in_new){
   var titles = $("#titles");
   var data = _data_server[index_in_new].content;
@@ -22,22 +30,34 @@ function loadChannel(index_in_new){
   }
 }
 
-function appendNewRowToMenu(){
+function appendNewRowToMenu(with_loading){
   var categories = $("#nav-mobile");
 
   var i = categories.children().length;
 
-  categories.append("<li class=\"bold\"><a id=\"menu_title"+i+"\" href=\"#\" class=\"waves-effect waves-teal\">Scene "+i+"</a></li>");
+  categories.append("<li class=\"bold\"><input id=\"menu_title_uuid"+i+"\" type=\"hidden\" value=\"\"/><a id=\"menu_title"+i+"\" href=\"#\" class=\"waves-effect waves-teal\">Scene "+i+"</a></li>");
 
   while(_data_server.length <= i) {
-    _data_server.push({title:"", content: [], idx:i});
+    _data_server.push({
+      uuid:uuid.v4(),
+      title:"",
+      content: [],
+    });
   }
 
   _data_server[i].title = "Scene "+i;
   var index_in_new = i;
+  var tmp_uuid = _data_server[i].uuid;
   $("#menu_title"+i).on("click",function(){
-    loadChannel(index_in_new);
+    var new_index = findChannel(tmp_uuid);
+    if(new_index == -1) alert("error invalid");
+    console.log(new_index);
+    loadChannel(new_index);
   });
+
+  if(with_loading){
+    loadChannel(i);
+  }
 }
 
 function appendNewRowToTitles(){
@@ -88,7 +108,7 @@ function appendNewRowToTitles(){
     var data = {
       title: $("#menu_title"+index_in_html).html(),
       content:[],
-      idx:index_in_html
+      uuid: $("#menu_title_uuid"+index_in_html).val()
     }
 
     if($("#current_selected") && $("#current_selected").val() == index_in_html){
@@ -116,11 +136,13 @@ function appendNewRowToTitles(){
 
     if(!json.content) json.content = [];
     if(!json.title) json.title = [];
+    if(!json.uuid) json.uuid = uuid.v4();
 
     while(categories.children().length <= index_in_html){
       appendNewRowToMenu();
     }
     $("#menu_title"+index_in_html).html(json.title);
+    $("#menu_title_uuid"+index_in_html).val(json.uuid);
   }
 
   function jsonToRow(json, index_in_html) {
@@ -166,12 +188,11 @@ function appendNewRowToTitles(){
         }
       }
 
-      var selected = $("#current_selected").val();
-      if(!selected || selected == ""){
-        selected = 0;
-      }
+      var uuid = $("#current_selected").val();
+      var selected = findChannel(uuid);
 
-      if(selected > categories.children().length){
+      if(selected == -1 && uuid) alert("error");
+      if(selected > categories.children().length || selected == -1){
         selected = 0;
       }
 
