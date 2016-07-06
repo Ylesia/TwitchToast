@@ -25,13 +25,16 @@
       </div>
     </nav>
     <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
-    <ul id="nav-mobile" class="side-nav fixed">
-      <li class="bold"><a href="#" class="waves-effect waves-teal">Scene 1</a></li>
-      <li class="bold"><a href="#" class="waves-effect waves-teal">Scene 2</a></li>
-      <li class="bold"><a href="#" class="waves-effect waves-teal">Scene 3</a></li>
-      <li class="bold"><a href="#" class="waves-effect waves-teal">Scene 4</a></li>
-      <li class="bold"><a href="#" class="waves-effect waves-teal">Scene 5</a></li>
-    </ul>
+    <div class="side-nav fixed">
+      <div class="col">
+        <ul id="nav-mobile" class="fixed" style="margin:0px">
+        </ul>
+        <ul id="nav-mobile" class="fixed" style="margin:0px">
+          <li class="bold"><a href="#" onclick="appendNewRowToMenu()" class="waves-effect waves-teal">New Channel</a></li>
+        </ul>
+
+      </div>
+    </div>
   </header>
 
   <main>
@@ -48,6 +51,7 @@
       </div>
 
       <div class="card">
+        <input type="hidden" id="current_selected" value="" />
         <div class="card-content">
           <div class="row">
             <div class="col s12">
@@ -147,7 +151,7 @@
         if(result.path){
           $("#logo_hidden"+index_in_html).val(result.path);
           $("#logo"+index_in_html).attr("src",result.path);
-          $("#updateLogoTrigger").closeModal();
+          $("#updateLogo").closeModal();
 
           invalidateStore();
         }
@@ -166,7 +170,7 @@
     $("#updateLogoTrigger").click();
     $("#validate_logo").off("click");
     $("#validate_logo").on("click", function(){
-      alert(index_in_html);
+      $("#updateLogo").closeModal();
     });
   }
 
