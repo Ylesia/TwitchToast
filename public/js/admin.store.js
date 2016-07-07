@@ -30,6 +30,8 @@ function changeChannelName(){
     _data_server[selected].title = new_channel_name;
     $("#menu_title"+selected).html(new_channel_name);
   }
+
+  invalidateStore();
 }
 
 function findChannel(uuid){
