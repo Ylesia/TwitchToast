@@ -3,6 +3,35 @@ var DEFAULT_ROWS_COUNT = 4;
 
 var _data_server = [];
 
+function fixFocusInput(input_element){
+  input_element.siblings('label, i').addClass('active');
+}
+
+function setMenuActiveAtIndex(index_in_html){
+  var categories = $("#nav-mobile");
+
+  categories.children().each(function (index, element){
+    console.log(index+" "+index_in_html);
+    if(index == index_in_html){
+      $(element).addClass("active");
+    }else{
+      $(element).removeClass("active");
+    }
+  });
+}
+
+function changeChannelName(){
+  var new_channel_name = $("#channel_name").val();
+  var uuid = $("#current_selected").val();
+  var selected = findChannel(uuid);
+
+  console.log(selected+" "+uuid);
+  if(new_channel_name && selected >= 0 && selected < _data_server.length){
+    _data_server[selected].title = new_channel_name;
+    $("#menu_title"+selected).html(new_channel_name);
+  }
+}
+
 function findChannel(uuid){
   var i = 0;
   if(!_data_server) return -1;
@@ -17,11 +46,19 @@ function loadChannel(index_in_new){
   if(index_in_new == -1 || !_data_server || _data_server.length <= index_in_new){
     return;
   }
-  console.log(_data_server+" "+index_in_new);
+
+  setMenuActiveAtIndex(index_in_new);
+
+  console.log(">>"+_data_server+" "+index_in_new);
   var titles = $("#titles");
+  var uuid = _data_server[index_in_new].uuid;
+  var name = _data_server[index_in_new].title;
   var data = _data_server[index_in_new].content;
 
-  $("#current_selected").val(index_in_new);
+  $("#current_selected").val(uuid);
+  $("#channel_name").val(name);
+  fixFocusInput($("#channel_name"));
+
   if(data){
     var length = data.length;
 
@@ -51,9 +88,13 @@ function appendNewRowToMenu(with_loading){
     });
   }
 
-  _data_server[i].title = "Scene "+i;
+  if(!_data_server[i].title){
+    _data_server[i].title = "Scene "+i;
+  }
+
   var index_in_new = i;
   var tmp_uuid = _data_server[i].uuid;
+  $("#menu_title"+i).html(_data_server[i].title);
   $("#menu_title"+i).on("click",function(){
     var new_index = findChannel(tmp_uuid);
     if(new_index == -1) alert("error invalid");
@@ -117,7 +158,7 @@ function appendNewRowToTitles(){
       uuid: $("#menu_title_uuid"+index_in_html).val()
     }
 
-    if($("#current_selected") && $("#current_selected").val() == index_in_html){
+    if($("#current_selected") && $("#current_selected").val() == data.uuid){
       $("#titles").children().each(function(index, element){
         data.content.push(rowToJson($(element)));
       });
@@ -163,6 +204,10 @@ function appendNewRowToTitles(){
     $("#logo_hidden"+index_in_html).val(json.logo);
     $("#duration"+index_in_html).val(json.duration);
     $("#loop"+index_in_html).attr("checked", json.loop);
+
+    fixFocusInput($("#title"+index_in_html));
+    fixFocusInput($("#duration"+index_in_html));
+
   }
 
   function invalidateStore(){
@@ -199,7 +244,14 @@ function appendNewRowToTitles(){
       var uuid = $("#current_selected").val();
       var selected = findChannel(uuid);
 
-      if(selected == -1 && uuid) alert("error");
+      //in case we did not find something to display
+      //we display the first item
+      if(selected == -1){
+        if(!uuid && data.length > 0){
+          selected = 0;
+        }
+      }
+
       if(selected < categories.children().length || selected > -1){
         loadChannel(selected);
       }

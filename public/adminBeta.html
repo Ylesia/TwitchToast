@@ -44,145 +44,162 @@
         <div class="card-content">
           <div class="row">
             <div class="col s12 m9">
-              <h1 class="header center-on-small-only">Enhance your titles</h1>
-              <h4 class ="light red-text text-lighten-4 center-on-small-only">Input your different titles, manage the looping effect and reorder them</h4>
+              <h2 class="header center-on-small-only">Stream management</h1>
+                <span class ="light red-text text-lighten-4 center-on-small-only">Create your own titles or logos. Reorder them to improve your management. Save the modification when done</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <input type="hidden" id="current_selected" value="" />
+          <div class="card-content">
+            <h5 class="center-on-small-only">Stream management</h5>
+            <div class="row">
+              <div class="col s12 m8 input-field">
+                <input type="text" name="channel_name" id="channel_name" value=""/>
+                <label for="channel_name">Channel name</label>
+              </div>
+              <div class="col s12 m4">
+              </div>
+              <div class="col s2 input-field right">
+                <button class="btn waves-effect" onclick="changeChannelName()">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <input type="hidden" id="current_selected" value="" />
+          <div class="card-content">
+            <h5 class="center-on-small-only">Titles</h5>
+            <div class="row">
+              <div class="col s12">
+                <ul id="titles">
+                  <!-- will receive all the title modification -->
+                </ul>
+
+              </div>
+              <div class="col right">
+                <button class="btn waves-effect right" onclick="invalidateStore()">Save</button>
+              </div>
+              <div class="col left">
+                <button class="btn waves-effect" onclick="appendNewRowToTitles()">Add a new layout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12">
+                <label for="durationloop">
+                  <span>Durée de la boucle :</span>
+                  <select id="durationloop" name="duartionloopselector">
+                    <option value="300">5min</option>
+                    <option value="600">10min</option>
+                    <option value="900">15min</option>
+                    <option value="1200">20min</option>
+                    <option value="1500">25min</option>
+                    <option value="1800">30min</option>
+                    <option value="3600">1h</option>
+                  </select>
+                </label>
+                <button class="btn waves-effect right" onclick="updateLoopList()">Loop</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="card">
-        <input type="hidden" id="current_selected" value="" />
-        <div class="card-content">
-          <div class="row">
-            <div class="col s12">
-              <ul id="titles">
-                <!-- will receive all the title modification -->
-              </ul>
+    </main>
 
-            </div>
-            <div class="col right">
-              <button class="btn waves-effect right" onclick="invalidateStore()">Save</button>
-            </div>
-            <div class="col left">
-              <button class="btn waves-effect" onclick="appendNewRowToTitles()">Add a new layout</button>
-            </div>
-          </div>
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container">
+          © 201X
+          <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
         </div>
       </div>
+    </footer>
 
-      <div class="card">
-        <div class="card-content">
-          <div class="row">
-            <div class="col s12">
-              <label for="durationloop">
-                <span>Durée de la boucle :</span>
-                <select id="durationloop" name="duartionloopselector">
-                  <option value="300">5min</option>
-                  <option value="600">10min</option>
-                  <option value="900">15min</option>
-                  <option value="1200">20min</option>
-                  <option value="1500">25min</option>
-                  <option value="1800">30min</option>
-                  <option value="3600">1h</option>
-                </select>
-              </label>
-              <button class="btn waves-effect right" onclick="updateLoopList()">Loop</button>
-            </div>
-          </div>
+    <a class="modal-trigger" href="#updateLogo" id="updateLogoTrigger"></a>
+    <div id="updateLogo" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4>Upload a new logo</h4>
+        <span class="btn btn-success fileinput-button">
+          <i class="glyphicon glyphicon-plus"></i>
+          <span>Select files...</span>
+          <!-- The file input field used as target for the file upload widget -->
+          <input id="fileupload" type="file" name="files[]" multiple>
+        </span>
+        <br>
+        <br>
+        <!-- The global progress bar -->
+        <div id="progress" class="progress">
+          <div class="progress-bar progress-bar-success"></div>
         </div>
+        <!-- The container for the uploaded files -->
+        <div id="files" class="files"></div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="validate_logo" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
       </div>
     </div>
 
-  </main>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.numeric.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize.init.js"></script>
+    <script type="text/javascript" src="js/store.min.js"></script>
+    <script type="text/javascript" src="js/admin.store.js"></script>
 
-  <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container">
-        © 201X
-        <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
-      </div>
-    </div>
-  </footer>
+    <script src="js/jquery.ui.widget.js"></script>
+    <script src="js/jquery.iframe-transport.js"></script>
+    <script src="js/jquery.fileupload.js"></script>
 
-  <a class="modal-trigger" href="#updateLogo" id="updateLogoTrigger"></a>
-  <div id="updateLogo" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Upload a new logo</h4>
-      <span class="btn btn-success fileinput-button">
-        <i class="glyphicon glyphicon-plus"></i>
-        <span>Select files...</span>
-        <!-- The file input field used as target for the file upload widget -->
-        <input id="fileupload" type="file" name="files[]" multiple>
-      </span>
-      <br>
-      <br>
-      <!-- The global progress bar -->
-      <div id="progress" class="progress">
-        <div class="progress-bar progress-bar-success"></div>
-      </div>
-      <!-- The container for the uploaded files -->
-      <div id="files" class="files"></div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" id="validate_logo" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-    </div>
-  </div>
+    <script type="text/javascript">
+    var DEFAULT_TITLES_CARD = 9;
 
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/jquery.numeric.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script type="text/javascript" src="js/materialize.init.js"></script>
-  <script type="text/javascript" src="js/store.min.js"></script>
-  <script type="text/javascript" src="js/admin.store.js"></script>
+    function changeLogo(index_in_html){
 
-  <script src="js/jquery.ui.widget.js"></script>
-  <script src="js/jquery.iframe-transport.js"></script>
-  <script src="js/jquery.fileupload.js"></script>
+      $('#fileupload').fileupload({
+        url: "/api/upload",
+        done: function (e, data) {
+          var result = JSON.parse(data.result);
+          if(result.path){
+            $("#logo_hidden"+index_in_html).val(result.path);
+            $("#logo"+index_in_html).attr("src",result.path);
+            $("#updateLogo").closeModal();
 
-  <script type="text/javascript">
-  var DEFAULT_TITLES_CARD = 9;
-
-  function changeLogo(index_in_html){
-
-    $('#fileupload').fileupload({
-      url: "/api/upload",
-      done: function (e, data) {
-        var result = JSON.parse(data.result);
-        if(result.path){
-          $("#logo_hidden"+index_in_html).val(result.path);
-          $("#logo"+index_in_html).attr("src",result.path);
-          $("#updateLogo").closeModal();
-
-          invalidateStore();
+            invalidateStore();
+          }
+        },
+        progressall: function (e, data) {
+          console.log(data);
+          var progress = parseInt(data.loaded / data.total * 100, 10);
+          $('#progress .progress-bar').css(
+            'width',
+            progress + '%'
+          );
         }
-      },
-      progressall: function (e, data) {
-        console.log(data);
-        var progress = parseInt(data.loaded / data.total * 100, 10);
-        $('#progress .progress-bar').css(
-          'width',
-          progress + '%'
-        );
-      }
-    }).prop('disabled', !$.support.fileInput)
-    .parent().addClass($.support.fileInput ? undefined : 'disabled');
+      }).prop('disabled', !$.support.fileInput)
+      .parent().addClass($.support.fileInput ? undefined : 'disabled');
 
-    $("#updateLogoTrigger").click();
-    $("#validate_logo").off("click");
-    $("#validate_logo").on("click", function(){
-      $("#updateLogo").closeModal();
+      $("#updateLogoTrigger").click();
+      $("#validate_logo").off("click");
+      $("#validate_logo").on("click", function(){
+        $("#updateLogo").closeModal();
+      });
+    }
+
+    $(document).ready(function() {
+      var i = 0;
+      var storage_length = 0;
+
+      checkStore();
+      getData(); //async
     });
-  }
-
-  $(document).ready(function() {
-    var i = 0;
-    var storage_length = 0;
-
-    checkStore();
-    getData(); //async
-  });
+    </script>
   </script>
-</script>
 </body>
 </html>
