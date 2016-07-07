@@ -5,6 +5,8 @@ var _data_server = [];
 
 function findChannel(uuid){
   var i = 0;
+  if(!_data_server) return -1;
+
   for(;i<_data_server.length;i++){
     if(_data_server[i].uuid == uuid) return i;
   }
@@ -12,6 +14,10 @@ function findChannel(uuid){
 }
 
 function loadChannel(index_in_new){
+  if(!_data_server && _data_server.length <= index_in_new){
+    return
+  }
+
   var titles = $("#titles");
   var data = _data_server[index_in_new].content;
 
@@ -175,6 +181,8 @@ function appendNewRowToTitles(){
   function restoreStore(data){
     _data_server = data;
 
+    if(!_data_server) _data_server = [];
+
     var categories = $("#nav-mobile");
     var titles = $("#titles");
 
@@ -192,11 +200,10 @@ function appendNewRowToTitles(){
       var selected = findChannel(uuid);
 
       if(selected == -1 && uuid) alert("error");
-      if(selected > categories.children().length || selected == -1){
-        selected = 0;
+      if(selected < categories.children().length || selected > -1){
+        loadChannel(selected);
       }
 
-      loadChannel(selected);
     }
   }
 
