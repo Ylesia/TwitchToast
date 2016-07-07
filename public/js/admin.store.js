@@ -14,10 +14,10 @@ function findChannel(uuid){
 }
 
 function loadChannel(index_in_new){
-  if(!_data_server && _data_server.length <= index_in_new){
-    return
+  if(index_in_new == -1 || !_data_server || _data_server.length <= index_in_new){
+    return;
   }
-
+  console.log(_data_server+" "+index_in_new);
   var titles = $("#titles");
   var data = _data_server[index_in_new].content;
 
