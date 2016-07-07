@@ -10,8 +10,11 @@
   "author": "Christophe Camicas",
   "license": "MIT",
   "dependencies": {
+    "busboy": "^0.2.13",
     "express": "^4.13.4",
     "mongodb": "^2.1.7",
+    "node-localstorage": "^1.3.0",
+    "node-uuid": "^1.4.7",
     "socket.io": "^1.4.5"
   }
 }

@@ -15,7 +15,7 @@
         //         var url = "http://chart.apis.google.com/chart?cht=qr&amp;chs=150x150&amp;chl=";
         //         url += qrstring.slice(qrstring.indexof("http"));
         //     }
-        // }   
+        // }
         var socket = io.connect();
         socket.on('newTitle', function (title){
             var titleContainer = document.getElementById('title');
@@ -23,20 +23,26 @@
             var logotimer = title.timeout + 2;
             var qr = title.text;
             //generateQR(qrstring);
-            
-            titleContainer.textContent = title.text;
-            logoContainer.classList.add('hiddenimage'); 
-            titleContainer.classList.remove('hidden');
-            
-            if(title.timeout){
-                setTimeout(function(){
-                    //titleContainer.classList.remove('texteblanc');
-                    titleContainer.classList.add('hidden');
-                }, title.timeout*1000);
-                setTimeout(function(){
-                    logoContainer.classList.remove('hiddenimage');
-                }, logotimer*1000);
+
+            if(title.logo && title.logo != ""){
+              logoContainer.src=title.logo;
+              logoContainer.classList.remove('hiddenimage');
+              titleContainer.classList.add('hidden');
+            }else{
+              titleContainer.textContent = title.text;
+              logoContainer.classList.add('hiddenimage');
+              titleContainer.classList.remove('hidden');
+
+              if(title.timeout){
+                  setTimeout(function(){
+                      //titleContainer.classList.remove('texteblanc');
+                      titleContainer.classList.add('hidden');
+                  }, title.timeout*1000);
+                  setTimeout(function(){
+                      logoContainer.classList.remove('hiddenimage');
+                  }, logotimer*1000);
+              }
             }
-        });  
+        });
     </script>
 </html>
